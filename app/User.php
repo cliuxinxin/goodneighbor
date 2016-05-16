@@ -23,4 +23,24 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * User can sent many tasks.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function sendTasks()
+    {
+        return $this->hasMany('App\Task','sender_id');
+    }
+
+    /**
+     * User can recieve many taks.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function recieveTasks()
+    {
+        return $this->hasMany('App\Task','receiver_id');
+    }
 }
