@@ -3,17 +3,30 @@
 @section('content')
 
     <div class="container">
-        <h1>需求列表</h1>
+        <h1>大家的需求</h1>
         @foreach($tasks as $task)
-            <div class="col-md-12">
-                <div class="well well-lg col-md-12">
-                    {{ $task->content }}
-                </div>
+            <div class="row">
+                    <div class="well well-lg col-md-12">
+                        <p class="text-primary text-left lead">{{ $task->content }}</p>
 
-                <div class="col-md-offset-10">
-                    <div class="btn btn-info">{{ $task->sender->name }}</div>
-                </div>
+                        <div class="row">
+                            <div class="col-md-1 col-md-offset-9">
+                                <div class="btn btn-primary">{{ $task->created_at->diffForHumans() }}</div>
+                            </div>
 
+                            <div class="col-md-1">
+                                <div class="btn btn-info">{{ $task->sender->name }}</div>
+                            </div>
+
+                            <div class="col-md-1">
+                                {!! Form::open(['method' => 'DELETE','url' => ['tasks',$task->id]])  !!}
+                                    {!! Form::submit('删除',['class' => 'btn btn-danger']) !!}
+                                {!! Form::close() !!}
+                            </div>
+
+                        </div>
+
+                    </div>
             </div>
 
         @endforeach

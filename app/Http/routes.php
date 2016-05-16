@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index');
 /**
  * Task Route
  */
+Route::delete('/tasks/{tasks}','TasksController@destroy');
 Route::get('/tasks','TasksController@index');
 Route::post('/tasks','TasksController@store');
 Route::get('/tasks/create','TasksController@create');

@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 
-
+use App\Http\Requests\TaskRequest;
 use App\Http\Requests;
 use App\Task;
 use Auth;
-use Request;
 
 class TasksController extends Controller
 {
@@ -40,14 +39,26 @@ class TasksController extends Controller
         return view('tasks.create');
     }
 
+
     /**
-     * System store a task send by a user
      *
+     * Store the task send by a user
+     *
+     * @param TaskRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store()
+    public function store(TaskRequest $request)
     {
-        $task = $this->user->sendTasks()->create(Request::all());
+        $this->user->sendTasks()->create($request->all());
+
+        return redirect('tasks');
+    }
+
+    public function destroy($task)
+    {
+        $this->authorize('destroy', $task);
+
+        $task->delete();
 
         return redirect('tasks');
     }
