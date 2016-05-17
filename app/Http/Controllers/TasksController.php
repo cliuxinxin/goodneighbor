@@ -17,16 +17,64 @@ class TasksController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->only(['create']);
+        $this->middleware('auth')->only(['create','take','store']);
         $this->user = Auth::user();
     }
 
-    //TODO:list all the task.
+
+    /**
+     * List all the tasks
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $tasks = Task::latest('created_at')->get();
 
         return view('tasks.index',compact('tasks'));
+    }
+
+    /**
+     * User take the task
+     *
+     * @param $task
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function take($task)
+    {
+
+        $this->authorize('receiver', $task);
+
+        $task->update(['receiver_id' => $this->user->id]);
+
+        return redirect('tasks');
+
+    }
+
+    /**
+     * Sender confirm the receiver get done the job
+     *
+     * @param $task
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function confirm($task)
+    {
+        $task->update(['status' =>'完成' ]);
+
+        return redirect('tasks');
+    }
+
+    /**
+     * Sender can remove the receiver
+     *
+     * @param $task
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function remove($task)
+    {
+        $task->update(['receiver_id' => null ]);
+
+        return redirect('tasks');
     }
 
     /**
@@ -54,6 +102,12 @@ class TasksController extends Controller
         return redirect('tasks');
     }
 
+    /**
+     * Delete the tasks send by the user
+     *
+     * @param $task
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function destroy($task)
     {
         $this->authorize('destroy', $task);

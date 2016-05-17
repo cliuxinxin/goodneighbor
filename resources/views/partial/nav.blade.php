@@ -11,9 +11,6 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href={{ url('/') }}>主页</a></li>
-                <li><a href={{ url('/tasks/create') }}>创建需求</a></li>
-                <li><a href={{ url('/tasks') }}>需求</a></li>
                 {{--<li><a href="#about">About</a></li>--}}
                 {{--<li><a href="#contact">Contact</a></li>--}}
                 {{--<li class="dropdown">--}}
