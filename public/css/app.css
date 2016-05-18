@@ -1,9 +1,9 @@
 html{
-    margin-top: 8%;
 }
 
 body {
     font-family: 'Lato';
+    padding-top: 70px;
 }
 
 .fa-btn {
