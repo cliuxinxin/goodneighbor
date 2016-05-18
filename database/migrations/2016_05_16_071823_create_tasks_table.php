@@ -24,6 +24,7 @@ class CreateTasksTable extends Migration
             $table->integer('receiver_id')->unsigned()->nullable();
             $table->foreign('receiver_id')->references('id')->on('users');
 
+
             $table->string('status');
             $table->timestamps();
         });

@@ -15,7 +15,8 @@ class Task extends Model
         'content',
         'sender_id',
         'receiver_id',
-        'status'
+        'status',
+        'point_id'
     ];
 
     /**
@@ -36,6 +37,16 @@ class Task extends Model
     public function receiver()
     {
         return $this->belongsTo('App\User','receiver_id');
+    }
+
+    /**
+     * Task has points
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function point()
+    {
+        return $this->hasOne('App\Point');
     }
 
     /**

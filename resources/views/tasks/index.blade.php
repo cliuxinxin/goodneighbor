@@ -7,7 +7,8 @@
         @foreach($tasks as $task)
             <div class="row">
                     <div class="well well-lg col-md-12">
-                        <p class="text-primary text-left lead">{{ $task->content }}</p>
+
+                        <p class="text-primary text-left lead"><span class="label label-success">值:{{ $task->point->points }}</span>{{ $task->content }}</p>
 
                         <div class="row">
 

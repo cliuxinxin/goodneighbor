@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Point;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -63,10 +64,19 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        $user->toPoints()->create([
+            'to_id' => $user->id,
+            'points' => 100000,
+            'details' => '注册送积分'
+        ]);
+
+        return $user;
     }
 }

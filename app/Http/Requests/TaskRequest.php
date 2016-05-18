@@ -23,8 +23,10 @@ class TaskRequest extends Request
      */
     public function rules()
     {
+        $points = \Auth::user()->havePoints();
         return [
-            'content' => 'required|max:70'
+            'content' => 'required|max:70',
+            'points' => "numeric|max:$points"
         ];
     }
 }

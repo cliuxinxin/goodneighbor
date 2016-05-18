@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TaskRequest;
 use App\Http\Requests;
+use App\Point;
 use App\Task;
 use Auth;
 
@@ -47,6 +48,8 @@ class TasksController extends Controller
 
         $task->update(['receiver_id' => $this->user->id]);
 
+        $task->point()->update(['to_id' => $this->user->id]);
+
         return redirect('tasks');
 
     }
@@ -61,6 +64,8 @@ class TasksController extends Controller
     {
         $task->update(['status' =>'完成' ]);
 
+        $task->point()->update(['status' =>null ]);
+
         return redirect('tasks');
     }
 
@@ -73,6 +78,8 @@ class TasksController extends Controller
     public function remove($task)
     {
         $task->update(['receiver_id' => null ]);
+
+        $task->point()->update(['to_id' => null ]);
 
         return redirect('tasks');
     }
@@ -97,7 +104,14 @@ class TasksController extends Controller
      */
     public function store(TaskRequest $request)
     {
-        $this->user->sendTasks()->create($request->all());
+
+        $task = $this->user->sendTasks()->create($request->all());
+
+        $task->point()->create([
+            'from_id' => $this->user->id,
+            'points' => $request->points,
+            'status' => '在途',
+        ]);
 
         return redirect('tasks');
     }
@@ -111,6 +125,8 @@ class TasksController extends Controller
     public function destroy($task)
     {
         $this->authorize('destroy', $task);
+
+        $task->point()->delete();
 
         $task->delete();
 

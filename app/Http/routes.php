@@ -17,9 +17,7 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-/**
- * Task Route
- */
+#Task
 Route::delete('/tasks/{tasks}','TasksController@destroy');
 Route::get('/tasks','TasksController@index');
 Route::post('/tasks','TasksController@store');
@@ -27,3 +25,6 @@ Route::get('/tasks/take/{tasks}','TasksController@take');
 Route::get('/tasks/confirm/{tasks}','TasksController@confirm');
 Route::get('/tasks/remove/{tasks}','TasksController@remove');
 Route::get('/tasks/create','TasksController@create');
+
+#Point
+Route::get('/points/user','PointsController@index');
