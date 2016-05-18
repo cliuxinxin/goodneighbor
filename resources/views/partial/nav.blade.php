@@ -9,8 +9,8 @@
             {{--</button>--}}
             <a class="navbar-brand" href="{{ url('/') }}">好邻居</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+        {{--<div id="navbar" class="navbar-collapse collapse">--}}
+            {{--<ul class="nav navbar-nav">--}}
                 {{--<li><a href="#about">About</a></li>--}}
                 {{--<li><a href="#contact">Contact</a></li>--}}
                 {{--<li class="dropdown">--}}
@@ -25,7 +25,7 @@
                         {{--<li><a href="#">One more separated link</a></li>--}}
                     {{--</ul>--}}
                 {{--</li>--}}
-            </ul>
+            {{--</ul>--}}
             {{--<ul class="nav navbar-nav navbar-right">--}}
                 {{--<li><a href="../navbar/">Default</a></li>--}}
                 {{--<li><a href="../navbar-static-top/">Static top</a></li>--}}
