@@ -45,7 +45,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/points/user') }}">积分</a></li>
+                            <li><a href="{{ url('/points/user') }}">我的积分</a></li>
                             <li><a href="{{ url('/logout') }}">登出</a></li>
                         </ul>
                     </li>
