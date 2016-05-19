@@ -28,3 +28,9 @@ Route::get('/tasks/create','TasksController@create');
 
 #Point
 Route::get('/points/user','PointsController@index');
+
+#Garden
+//Route::get('/gardens/get','GardensController@get');
+
+#Profile
+Route::get('/profile/{user}','ProfilesController@index');

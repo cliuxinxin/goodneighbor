@@ -30,3 +30,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ##feature
 1、增加task,每个用户都能发表task;
 2、增加积分系统，每个用户发表task的时候，都需要填写积分。当任务完成以后，系统自动把积分转移到接受人头上。用户完成注册时候，系统先送10万分以资鼓励
+3、增加小区系统，把上海和成都的小区抓取到系统里面来，把均价抓取放到后台，方便后台小数据分析。

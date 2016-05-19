@@ -161,6 +161,11 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
 
+        /**
+         * Goutte
+         */
+        Weidner\Goutte\GoutteServiceProvider::class,
+
 
     ],
 
@@ -209,6 +214,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Goutte' => Weidner\Goutte\GoutteFacade::class,
 
     ],
 

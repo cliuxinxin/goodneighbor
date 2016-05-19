@@ -24,6 +24,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    /**
+     * A user has one profile
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function profile()
+    {
+        return $this->hasOne('App\Profile');
+    }
+
     /**
      * User can sent many tasks.
      *

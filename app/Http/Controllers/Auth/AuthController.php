@@ -77,6 +77,8 @@ class AuthController extends Controller
             'details' => '注册送积分'
         ]);
 
+        $user->profile()->create([]);
+
         return $user;
     }
 }
