@@ -133,4 +133,6 @@ class User extends Authenticatable
             return $value->notconfirm();
         });
     }
+
+
 }

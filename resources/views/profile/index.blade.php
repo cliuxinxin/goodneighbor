@@ -36,6 +36,30 @@
                                     <td>{{ $profile->phone }}</td>
                                 </tr>
 
+                                <tr>
+                                    <td>邀请码：</td>
+                                    <td>
+                                        @if($profile->invite_code)
+                                        {{ $profile->invite_code }}
+                                        @else
+                                            <a href={{ url('profile/invitecode').'/'.$profile->id }} class="btn btn-primary">获取验证码</a>
+                                            @endif
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>邀请人：</td>
+                                    <td>
+                                        @if(!$profile->notMyInviteCode($profile->bonus_code))
+                                            请不要输入自己的邀请码
+                                        @elseif($profile->bonus_code)
+                                            {{ $profile->inviter($profile->bonus_code)->name }}
+                                        @else
+                                            还没有输入邀请码
+                                        @endif
+                                    </td>
+                                </tr>
+
                                 </tbody>
                             </table>
 

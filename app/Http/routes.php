@@ -36,3 +36,4 @@ Route::get('/gardens/get','GardensController@get');
 Route::get('/profile/{user}','ProfilesController@index');
 Route::patch('/profile/{profile}','ProfilesController@update');
 Route::get('/profile/edit/{user}','ProfilesController@edit');
+Route::get('profile/invitecode/{profile}','ProfilesController@inviteCode');

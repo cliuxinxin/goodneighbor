@@ -18,7 +18,7 @@
 
                         <div class="form-group">
                             {!!  Form::label('garden','小区：') !!}
-                            {!!  Form::select('garden_id',$gardens,$profile->garden?$profile->garden->name:'',['id' => 'garden_id','class' => 'form-control']) !!}
+                            {!!  Form::select('garden_id',$gardens,$profile->garden_id?$profile->garden->id:'',['id' => 'garden_id','class' => 'form-control']) !!}
                         </div>
 
                         <div class="form-group">
@@ -30,6 +30,14 @@
                             {!!  Form::label('phone','手机：') !!}
                             {!!  Form::text('phone',$profile->phone,['class' => 'form-control']) !!}
                         </div>
+
+                        @if($profile->isGetBonus())
+                        <div class="form-group">
+                            {!!  Form::label('bonus_code','邀请码：') !!}
+                            {!!  Form::text('bonus_code','',['class' => 'form-control']) !!}
+                        </div>
+                        @endif
+
 
                         <div class="col-md-2 pull-right">
                             {!! Form::submit('完成',['class' => 'btn btn-primary form-control']) !!}

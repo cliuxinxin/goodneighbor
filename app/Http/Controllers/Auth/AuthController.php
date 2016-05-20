@@ -77,7 +77,7 @@ class AuthController extends Controller
             'details' => '注册送积分'
         ]);
 
-        $user->profile()->create([]);
+        $user->profile()->create(['invite_code'=> '']);
 
         return $user;
     }

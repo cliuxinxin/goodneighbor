@@ -16,7 +16,7 @@ class ProfilesController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->only(['index','edit','update']);
+        $this->middleware('auth')->only(['index','edit','update','inviteCode']);
         $this->user = Auth::user();
     }
 
@@ -64,9 +64,55 @@ class ProfilesController extends Controller
      */
     public function update($profile_id,Request $request)
     {
+        $input = $request->all();
 
-        Profile::find($profile_id)->update($request->all());
+        $profile = Profile::find($profile_id);
+
+        $this->getBouns($profile, $input);
 
         return redirect()->action('ProfilesController@index', ['userid' => $this->user->id]);
     }
+
+
+    /**
+     * User generate the invite code.
+     *
+     * @param $profileId
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function inviteCode($profileId)
+    {
+        Profile::find($profileId)->update(['invite_code'=> '']);
+
+        return redirect()->action('ProfilesController@index', ['userid' => $this->user->id]);
+    }
+
+    /**
+     * @param $profile
+     * @param $input
+     */
+    public function getBouns($profile, $input)
+    {
+        if ($profile->isCanGetBouns($input['bonus_code'])) {
+
+            $invite_user = $profile->inviter($input['bonus_code']);
+
+            $this->user->toPoints()->create([
+                'to_id' => $this->user->id,
+                'points' => 50000,
+                'details' => '被' . $invite_user->name . '邀请注册送积分'
+            ]);
+
+            $invite_user->toPoints()->create([
+                'to_id' => $invite_user->id,
+                'points' => 50000,
+                'details' => '邀请' . $this->user->name . '注册送积分'
+            ]);
+
+            $input['bonus_status'] = "已被邀请";
+        }
+
+        $profile->update($input);
+    }
+
 }
