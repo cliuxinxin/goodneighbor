@@ -22,6 +22,7 @@ class CreateProfilesTable extends Migration
 
             $table->string('room')->nullable();
             $table->string('phone')->nullable();
+            $table->string('img_url')->nullable();
 
             $table->timestamps();
         });

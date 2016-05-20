@@ -13,6 +13,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href=" {{ url('css/libs/bootstrap.min.css') }}">
+    <link rel="stylesheet" href=" {{ url('css/libs/select2.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/app.css') }}">
 </head>
 <body id="app-layout">
@@ -23,6 +24,8 @@
         <!-- JavaScripts -->
 <script src="{{ url('js/libs/jquery.min.js') }}"></script>
 <script src="{{ url('js/libs/bootstrap.min.js') }}"></script>
+<script src="{{ url('js/libs/select2.min.js') }}"></script>
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+@yield('footer')
 </body>
 </html>

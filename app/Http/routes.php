@@ -34,3 +34,5 @@ Route::get('/points/user','PointsController@index');
 
 #Profile
 Route::get('/profile/{user}','ProfilesController@index');
+Route::patch('/profile/{profile}','ProfilesController@update');
+Route::get('/profile/edit/{user}','ProfilesController@edit');

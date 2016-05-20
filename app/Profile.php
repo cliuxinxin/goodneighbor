@@ -10,7 +10,8 @@ class Profile extends Model
         'user_id',
         'garden_id',
         'room',
-        'phone'
+        'phone',
+        'img_url'
     ];
 
     /**
@@ -19,5 +20,15 @@ class Profile extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    /**
+     * A user has a garden
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function garden()
+    {
+        return $this->belongsTo('App\Garden');
     }
 }
