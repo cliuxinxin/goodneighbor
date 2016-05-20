@@ -30,7 +30,7 @@ Route::get('/tasks/create','TasksController@create');
 Route::get('/points/user','PointsController@index');
 
 #Garden
-//Route::get('/gardens/get','GardensController@get');
+Route::get('/gardens/get','GardensController@get');
 
 #Profile
 Route::get('/profile/{user}','ProfilesController@index');

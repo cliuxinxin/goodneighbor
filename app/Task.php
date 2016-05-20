@@ -136,6 +136,10 @@ class Task extends Model
         return $this->isProcessing() && $this->isSendByUser($user);
     }
 
+    public function isReceivedByUser(User $user)
+    {
+        return $this->getAttribute('receiver_id') == $user->id;
+    }
 
 }
 

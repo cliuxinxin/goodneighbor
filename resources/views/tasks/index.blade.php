@@ -8,7 +8,8 @@
             <div class="row">
                     <div class="well well-lg col-md-12">
 
-                        <p class="text-primary text-left lead"><span class="label label-success">值:{{ $task->point->points }}</span>{{ $task->content }}</p>
+                        <p class="label label-success lead">分值:{{ $task->point->points }}</p>
+                        <p class="text-primary text-left lead">{{ $task->content }}</p>
 
                         <div class="row">
 
@@ -56,11 +57,18 @@
                             </div>
 
                             <div class="col-md-1">
-
                                 @if(Auth::check() && $task->isCanRemove(Auth::user()))
                                     <a class="btn btn-warning" href="{{ url('tasks/remove').'/'.$task->id }}">取消{{ $task->receiver->name }}的帮助</a>
                                 @endif
                             </div>
+
+                            <div class="col-md-1">
+                                @if(Auth::check() && $task->isReceivedByUser(Auth::user()))
+                                    <a class="btn btn-info">手机号码：{{ $task->sender->profile->phone?$task->sender->profile->phone:'没留下电话号码' }}</a>
+                                @endif
+                            </div>
+
+
 
 
                         </div>

@@ -18,7 +18,7 @@ class GardensController extends Controller
     public function get()
     {
 
-        for($page = 0;$page<=100;$page++){
+        for($page = 1;$page<=1;$page++){
             $this->getGardenInfoByPage($page);
         }
 
@@ -82,13 +82,13 @@ class GardensController extends Controller
      */
     public function getGardenInfoByPage($page)
     {
-        $crawler = Goutte::request('GET', 'http://sh.lianjia.com/xiaoqu/d'.$page);
+        $crawler = Goutte::request('GET', 'http://cd.lianjia.com/xiaoqu/rs%E4%B8%AD%E6%B5%B7%E5%9B%BD%E9%99%85');
 
         $node_values = $this->getGardensName($crawler);
 
         $node_values2 = $this->getGardensPrice($crawler);
 
-        $node_values3 = $this->mergeGardensInfo($node_values, $node_values2, "上海");
+        $node_values3 = $this->mergeGardensInfo($node_values, $node_values2, "成都");
 
         foreach ($node_values3 as $node_value) {
             Garden::firstOrCreate($node_value);

@@ -34,6 +34,12 @@ class ProfilesController extends Controller
         return view('profile.index',compact('profile'));
     }
 
+    /**
+     * User edit his profile
+     *
+     * @param $userid
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit($userid)
     {
         $profile = $this->user->profile;
@@ -48,6 +54,14 @@ class ProfilesController extends Controller
 
     }
 
+    /**
+     *
+     * Update User profile after edit
+     *
+     * @param $profile_id
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update($profile_id,Request $request)
     {
 
