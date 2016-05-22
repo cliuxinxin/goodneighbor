@@ -43,3 +43,7 @@ Route::get('profile/invitecode/{profile}','ProfilesController@inviteCode');
 
 #Comments
 Route::post('/comments/{tasks}','CommentsController@store');
+
+#Timelines
+Route::get('timelines/generate','TimelinesController@generate');
+Route::get('timelines/{user}','TimelinesController@show');

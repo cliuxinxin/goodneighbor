@@ -60,6 +60,15 @@ class Task extends Model
     }
 
     /**
+     * Task has many timelines
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function timelines()
+    {
+        return $this->hasMany('App\Timeline');
+    }
+    /**
      * Is the task send by user
      *
      * @param \App\User $user

@@ -86,6 +86,15 @@ class User extends Authenticatable
 
 
     /**
+     * User has many timelines
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function timelines()
+    {
+        return $this->hasMany('App\Timeline');
+    }
+    /**
      * User get confirm points
      *
      * @return mixed
