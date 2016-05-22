@@ -40,7 +40,7 @@
                                 @if( $get_point->details )
                                     {{ $get_point->details }}
                                     @else
-                                    任务：<a href="{{ url('tasks').'/'.$task->id }}">{{ $get_point->task->content }}</a>
+                                    任务：<a href="{{ url('tasks').'/'.$get_point->task->id }}">{{ $get_point->task->content }}</a>
                                 @endif
                                 </td>
                             <td>{{ $get_point->points }}</td>
@@ -63,7 +63,7 @@
                 <tbody>
                 @foreach($spend_points as $spend_point)
                     <tr>
-                        <td><a href="{{ url('tasks').'/'.$task->id }}">{{ $spend_point->task->content }}</a></td>
+                        <td><a href="{{ url('tasks').'/'.$spend_point->task->id }}">{{ $spend_point->task->content }}</a></td>
                         <td>{{ $spend_point->points }}</td>
                     </tr>
                 @endforeach
@@ -85,7 +85,7 @@
                     <tbody>
                     @foreach($unconfirm_get_points as $unconfirm_get_point)
                         <tr>
-                            <td><a href="{{ url('tasks').'/'.$task->id }}">{{ $unconfirm_get_point->task->content }}</a></td>
+                            <td><a href="{{ url('tasks').'/'.$unconfirm_get_point->task->id }}">{{ $unconfirm_get_point->task->content }}</a></td>
                             <td>{{ $unconfirm_get_point->points }}</td>
                         </tr>
                     @endforeach
@@ -107,7 +107,7 @@
                     <tbody>
                     @foreach($unconfirm_spend_points as $unconfirm_spend_point)
                         <tr>
-                            <td><a href="{{ url('tasks').'/'.$task->id }}">{{ $unconfirm_spend_point->task->content }}</a></td>
+                            <td><a href="{{ url('tasks').'/'.$unconfirm_spend_point->task->id }}">{{ $unconfirm_spend_point->task->content }}</a></td>
                             <td>{{ $unconfirm_spend_point->points }}</td>
                         </tr>
                     @endforeach
