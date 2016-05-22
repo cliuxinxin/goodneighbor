@@ -3,15 +3,16 @@
 
         {!! Form::open(['url' => 'tasks']) !!}
 
+        <div :wordnum="wordnum">还可以输入字数：@{{wordnum}}</div>
         <div class="form-group">
-            {!! Form::textarea('content',null,['class' => 'form-control','placeholder' => '为方便人家帮助，请在70个字以内。']) !!}
+            {!! Form::textarea('content',null,['v-model'=>'content','class' => 'form-control','placeholder' => '']) !!}
         </div>
 
         <div class="form-group">
             @if(Auth::check())
             {!! Form::label('points',"可用积分:".Auth::user()->havePoints()) !!}
             {!! Form::number('points',null,['class' => 'form-control']) !!}
-                @endif
+            @endif
         </div>
 
         <div class="row">
@@ -27,5 +28,27 @@
         @include('partial.error')
         <hr>
     </div>
+
+    @section('footer')
+        <script src="{{ url('js/libs/vue.min.js') }}"></script>
+
+        <script>
+            new Vue({
+                el:'body',
+
+                data:{
+                    'content':'',
+                    'wordnum':0
+                },
+
+                computed:{
+                    wordnum: function () {
+                        return 70-this.content.length;
+                    }
+                }
+
+            });
+        </script>
+    @endsection
 
 
