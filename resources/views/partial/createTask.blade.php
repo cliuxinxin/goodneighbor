@@ -3,9 +3,9 @@
 
         {!! Form::open(['url' => 'tasks']) !!}
 
-        <div :wordnum="wordnum">还可以输入字数：@{{wordnum}}</div>
+        {{--<div :wordnum="wordnum">还可以输入字数：@{{wordnum}}</div>--}}
         <div class="form-group">
-            {!! Form::textarea('content',null,['v-model'=>'content','class' => 'form-control','placeholder' => '']) !!}
+            {!! Form::textarea('content',null,['class' => 'form-control','placeholder' => '']) !!}
         </div>
 
         <div class="form-group">
@@ -29,26 +29,26 @@
         <hr>
     </div>
 
-    @section('footer')
-        <script src="{{ url('js/libs/vue.min.js') }}"></script>
+    {{--@section('footer')--}}
+        {{--<script src="{{ url('js/libs/vue.min.js') }}"></script>--}}
 
-        <script>
-            new Vue({
-                el:'body',
+        {{--<script>--}}
+            {{--new Vue({--}}
+                {{--el:'body',--}}
 
-                data:{
-                    'content':'',
-                    'wordnum':0
-                },
+                {{--data:{--}}
+                    {{--'content':'',--}}
+                    {{--'wordnum':0--}}
+                {{--},--}}
 
-                computed:{
-                    wordnum: function () {
-                        return 70-this.content.length;
-                    }
-                }
+                {{--computed:{--}}
+                    {{--wordnum: function () {--}}
+                        {{--return 70-this.content.length;--}}
+                    {{--}--}}
+                {{--}--}}
 
-            });
-        </script>
-    @endsection
+            {{--});--}}
+        {{--</script>--}}
+    {{--@endsection--}}
 
 
