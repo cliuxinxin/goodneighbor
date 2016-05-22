@@ -35,7 +35,7 @@ class TimelinesController extends Controller
      */
     public function show()
     {
-        $timelines = $this->user->timelines()->latest('time')->get();
+        $timelines = $this->user->timelines()->latest('time')->paginate(20);
 
         $this->generate();
 

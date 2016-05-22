@@ -121,8 +121,12 @@
                     </div>
             @endif
             </li>
-
-
         @endforeach
+    </ul>
+    <div class="text-center">
+        {{ $timelines->links()  }}
+    </div>
+
+    </div>
 
 @endsection
