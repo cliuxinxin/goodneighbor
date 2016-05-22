@@ -55,7 +55,7 @@
             @endif
         </div>
 
-        <div class="col-md-1">
+        <div class="col-md-3">
             @if(Auth::check() && $task->isReceivedByUser(Auth::user()))
                 <a class="btn btn-info">手机号码：{{ $task->sender->profile->phone?$task->sender->profile->phone:'没留下电话号码' }}</a>
             @endif
