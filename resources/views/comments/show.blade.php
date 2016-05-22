@@ -4,6 +4,8 @@
             <div class="post-heading">
                 @if ($task->sender->id == $comment->user->id)
                     <div class="lead">{{ $comment->user->name }}<span class="badge">求助人</span></div>
+                @elseif($task->receiver->id == $comment->user->id)
+                    <div class="lead">{{ $comment->user->name }}<span class="badge">帮忙人</span></div>
                 @else
                     <div class="lead">{{ $comment->user->name }}</div>
                 @endif
