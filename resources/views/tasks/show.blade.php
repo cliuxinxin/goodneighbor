@@ -6,11 +6,13 @@
         <div class="row">
             @include('tasks.singleTask',['task' => $task])
         </div>
-
         @include('comments.create')
-        @foreach($task->comments as $comment )
+        {{ $comments->links()  }}
+        @foreach($comments as $comment )
             @include('comments.show',['comment' => $comment,'task' => $task])
         @endforeach
+
+
 
     </div>
 

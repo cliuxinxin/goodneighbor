@@ -30,7 +30,7 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $tasks = Task::latest('created_at')->get();
+        $tasks = Task::latest('created_at')->paginate(10);
 
         return view('tasks.index',compact('tasks'));
     }
@@ -42,7 +42,7 @@ class TasksController extends Controller
      */
     public function userTasks()
     {
-        $tasks = $this->user->sendTasks;
+        $tasks = $this->user->sendTasks()->paginate(10);
 
         return view('tasks.index',compact('tasks'));
     }
@@ -54,7 +54,7 @@ class TasksController extends Controller
      */
     public function receiveTasks()
     {
-        $tasks = $this->user->recieveTasks;
+        $tasks = $this->user->recieveTasks()->paginate(10);
 
         return view('tasks.index',compact('tasks'));
     }
@@ -165,6 +165,8 @@ class TasksController extends Controller
      */
     public function show($task)
     {
-        return view('tasks.show',compact('task'));
+        $comments = $task->comments()->paginate(10);
+
+        return view('tasks.show',compact('task','comments'));
     }
 }
