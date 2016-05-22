@@ -24,7 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $code =  strtoupper(bin2hex(openssl_random_pseudo_bytes(3)));
-        return $code;
+        return view('home');
     }
 }

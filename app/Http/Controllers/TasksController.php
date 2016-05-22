@@ -132,4 +132,15 @@ class TasksController extends Controller
 
         return redirect('tasks');
     }
+
+    /**
+     * See the task and comment
+     *
+     * @param $task
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($task)
+    {
+        return view('tasks.show',compact('task'));
+    }
 }

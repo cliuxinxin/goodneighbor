@@ -19,6 +19,7 @@ Route::get('/home', 'HomeController@index');
 
 #Task
 Route::delete('/tasks/{tasks}','TasksController@destroy');
+Route::get('/tasks/{tasks}','TasksController@show');
 Route::get('/tasks','TasksController@index');
 Route::post('/tasks','TasksController@store');
 Route::get('/tasks/take/{tasks}','TasksController@take');
@@ -37,3 +38,6 @@ Route::get('/profile/{user}','ProfilesController@index');
 Route::patch('/profile/{profile}','ProfilesController@update');
 Route::get('/profile/edit/{user}','ProfilesController@edit');
 Route::get('profile/invitecode/{profile}','ProfilesController@inviteCode');
+
+#Comments
+Route::post('/comments/{tasks}','CommentsController@store');

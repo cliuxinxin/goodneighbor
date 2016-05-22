@@ -9,7 +9,8 @@
                     <div class="well well-lg col-md-12">
 
                         <p class="label label-success lead">分值:{{ $task->point->points }}</p>
-                        <p class="text-primary text-left lead">{{ $task->content }}</p>
+                        <p class="text-primary text-left lead">
+                            <a href="{{ url('tasks').'/'.$task->id }}">{{ $task->content }}</a></p>
 
                         <div class="row">
 

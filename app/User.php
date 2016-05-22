@@ -24,6 +24,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * A user has many commnets
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 
     /**
      * A user has one profile

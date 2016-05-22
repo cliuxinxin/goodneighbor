@@ -40,6 +40,16 @@ class Task extends Model
     }
 
     /**
+     * A task has many comment.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function Comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
+    /**
      * Task has points
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -125,7 +135,6 @@ class Task extends Model
     }
 
     /**
-     *
      * User can remove the receiver of the task on process.
      *
      * @param \App\User $user
@@ -136,6 +145,12 @@ class Task extends Model
         return $this->isProcessing() && $this->isSendByUser($user);
     }
 
+    /**
+     * This use is the receiver
+     *
+     * @param \App\User $user
+     * @return bool
+     */
     public function isReceivedByUser(User $user)
     {
         return $this->getAttribute('receiver_id') == $user->id;
