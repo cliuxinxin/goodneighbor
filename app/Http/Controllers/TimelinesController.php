@@ -9,6 +9,7 @@ use App\Timeline;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 use App\Http\Requests;
 
@@ -158,7 +159,7 @@ class TimelinesController extends Controller
                     'user_id' => $point->reciever->id,
                     'type' => '注册获得积分',
                     'action' => $point->points,
-                    'time' => $point->created_at
+                    'time' => $point->created_at->addSecond()
                 ]);
             } elseif ($point->status == '') {
                 Timeline::firstOrCreate([
@@ -174,7 +175,7 @@ class TimelinesController extends Controller
                     'type' => '求助花费积分',
                     'task_id' => $point->task->id,
                     'action' => $point->points,
-                    'time' => $point->created_at
+                    'time' => $point->updated_at
                 ]);
             }
         }
