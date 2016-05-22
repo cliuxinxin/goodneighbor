@@ -36,6 +36,18 @@ class TasksController extends Controller
     }
 
     /**
+     * User tasks
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function userTasks()
+    {
+        $tasks = $this->user->sendTasks;
+
+        return view('tasks.index',compact('tasks'));
+    }
+
+    /**
      * User take the task
      *
      * @param $task
