@@ -1,5 +1,10 @@
 @extends('app')
 
+@section('header')
+    <link rel="stylesheet" href=" {{ url('css/libs/select2.min.css') }}">
+{{--    <link rel="stylesheet" href=" {{ url('css/libs/select2.min.css') }}">--}}
+@endsection
+
 @section('content')
     <div class="container">
 
@@ -66,6 +71,7 @@
 
 
 @section('footer')
+    <script src="{{ url('js/libs/select2.min.js') }}"></script>
     <script>
         $('#garden_id').select2();
     </script>

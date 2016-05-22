@@ -8,13 +8,14 @@
     <title>好邻居</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="{{ url('css/libs/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{ url('css/libs/Lato.css') }}">
+{{--    <link rel="stylesheet" href="{{ url('css/libs/font-awesome.min.css')}}">--}}
+    {{--<link rel="stylesheet" href="{{ url('css/libs/Lato.css') }}">--}}
 
     <!-- Styles -->
-    <link rel="stylesheet" href=" {{ url('css/libs/bootstrap.min.css') }}">
-    <link rel="stylesheet" href=" {{ url('css/libs/select2.min.css') }}">
+{{--    <link rel="stylesheet" href=" {{ url('css/libs/bootstrap.min.css') }}">--}}
+    <link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url('css/app.css') }}">
+    @yield('header')
 </head>
 <body id="app-layout">
 @include('partial.nav')
@@ -22,9 +23,11 @@
 @yield('content')
 
         <!-- JavaScripts -->
-<script src="{{ url('js/libs/jquery.min.js') }}"></script>
-<script src="{{ url('js/libs/bootstrap.min.js') }}"></script>
-<script src="{{ url('js/libs/select2.min.js') }}"></script>
+{{--<script src="{{ url('js/libs/jquery.min.js') }}"></script>--}}
+<script src="http://libs.useso.com/js/jquery/2.1.1-rc2/jquery.min.js"></script>
+{{--<script src="{{ url('js/libs/bootstrap.min.js') }}"></script>--}}
+<script src="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 @yield('footer')
 </body>
