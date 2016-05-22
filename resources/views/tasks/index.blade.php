@@ -69,6 +69,10 @@
                                 @endif
                             </div>
 
+                            <div class="col-md-1">
+                                <a class="btn btn-info" href="{{ url('tasks').'/'.$task->id }}">评论数：{{ count($task->comments) }}</a>
+                            </div>
+
 
 
 
