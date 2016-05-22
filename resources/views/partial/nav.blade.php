@@ -74,7 +74,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./Index.html">好邻居</a>
+            <a class="navbar-brand" href="{{ url('/') }}">好邻居</a>
         </div>
         <div class="collapse navbar-collapse" id="navigationbar">
             @if(Auth::check())
