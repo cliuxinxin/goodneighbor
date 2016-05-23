@@ -34,4 +34,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 4、接镖的人能看到手机号码
 5、邀请码，用户注册的时候，可以填入邀请码，填入邀请码以后，用户自然得到50000分。并且生成自己的邀请码
 6、评论，点进去可以评论
+7、可以查看用户的时间线  
 99、手机注册，手机收验证码，手机找回密码
