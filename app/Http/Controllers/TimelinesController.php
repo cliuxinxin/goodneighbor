@@ -35,9 +35,9 @@ class TimelinesController extends Controller
      */
     public function show()
     {
-        $timelines = $this->user->timelines()->latest('time')->paginate(20);
-
         $this->generate();
+
+        $timelines = $this->user->timelines()->latest('time')->paginate(20);
 
         return view('timelines.show',compact('timelines'));
     }
@@ -154,11 +154,11 @@ class TimelinesController extends Controller
         $points = Point::all();
 
         foreach ($points as $point) {
-            if ($point->details == '注册送积分') {
+            if ($point->details != '') {
                 Timeline::firstOrCreate([
                     'user_id' => $point->reciever->id,
                     'type' => '注册获得积分',
-                    'action' => $point->points,
+                    'action' => $point->details.':'.$point->points,
                     'time' => $point->created_at->addSecond()
                 ]);
             } elseif ($point->status == '') {
