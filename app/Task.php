@@ -101,6 +101,16 @@ class Task extends Model
     }
 
     /**
+     * Is the task not confirmed?
+     *
+     * @return bool
+     */
+    public function isNotConfirmed()
+    {
+        return $this->getAttribute('status') != '完成';
+    }
+
+    /**
      * Is the task processing
      *
      * @return bool
@@ -118,7 +128,7 @@ class Task extends Model
      */
     public function isNotReceived()
     {
-        return $this->getAttribute('receiver_id') == '';
+        return $this->getAttribute('receiver_id') == null;
     }
 
     /**
