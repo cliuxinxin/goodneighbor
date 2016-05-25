@@ -50,8 +50,10 @@
                 </tbody>
             </table>
         </div>
+        <div>{{ $get_points->links() }}</div>
 
-        @if(count($spend_points)>0)
+
+    @if(count($spend_points)>0)
         <div class="panel panel-default">
             <!-- Default panel contents -->
             <div class="panel-heading">积分消费</div>
@@ -71,6 +73,7 @@
                 </tbody>
             </table>
         </div>
+            <div>{{ $spend_points->links() }}</div>
         @endif
 
         @if(count($unconfirm_get_points)>0)
@@ -93,6 +96,7 @@
                     </tbody>
                 </table>
             </div>
+            <div>{{ $unconfirm_get_points->links() }}</div>
         @endif
 
         @if(count($unconfirm_spend_points)>0)
@@ -115,6 +119,8 @@
                     </tbody>
                 </table>
             </div>
+            <div>{{ $unconfirm_spend_points->links() }}</div>
+
         @endif
 
 
