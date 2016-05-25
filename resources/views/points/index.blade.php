@@ -4,25 +4,26 @@
     <div class="container">
         <h1>{{ Auth::user()->name }}的积分</h1>
 
+        <div class="alert alert-success lead" role="alert">您现有积分：<strong>{{ Auth::user()->havePoints() }}</strong></div>
         {{--<div class="panel panel-default well well-lg col-md-12 lead">--}}
             {{--您的积分有：{{ Auth::user()->havePoints() }}--}}
         {{--</div>--}}
 
-        <div class="panel panel-default">
-            <!-- Default panel contents -->
-            <div class="panel-heading">拥有积分</div>
-            <!-- Table -->
-            <table class="table">
-                <thead>
-                <th>积分</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{{ Auth::user()->havePoints() }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        {{--<div class="panel panel-default">--}}
+            {{--<!-- Default panel contents -->--}}
+            {{--<div class="panel-heading">拥有积分</div>--}}
+            {{--<!-- Table -->--}}
+            {{--<table class="table">--}}
+                {{--<thead>--}}
+                {{--<th>积分</th>--}}
+                {{--</thead>--}}
+                {{--<tbody>--}}
+                    {{--<tr>--}}
+                        {{--<td>{{ Auth::user()->havePoints() }}</td>--}}
+                    {{--</tr>--}}
+                {{--</tbody>--}}
+            {{--</table>--}}
+        {{--</div>--}}
 
         <div class="panel panel-default">
             <!-- Default panel contents -->
