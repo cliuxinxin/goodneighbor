@@ -58,7 +58,7 @@
                 </div>
                 <div class="stepwizard-step">
                     @if($task->isConfirmed())
-                        <button type="button" class="btn btn-primary btn-circle" disabled="disabled">完成</button>
+                        <button type="button" class="btn btn-success btn-circle" disabled="disabled">完成</button>
                     @else
                         <button type="button" class="btn btn-default btn-circle" disabled="disabled">完成</button>
                     @endif
