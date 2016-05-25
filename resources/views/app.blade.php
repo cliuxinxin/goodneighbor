@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1, user-scalable=no">
-
+    <link link rel="icon" type="image/ico" href="{!! asset('img/favicon.ico') !!}">
     <title>好邻居</title>
 
     <!-- Fonts -->

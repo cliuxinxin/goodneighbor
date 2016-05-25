@@ -14,10 +14,6 @@
 
         @include('points.pointTable',['points'=>$unconfirm_spend_points,'titile'=>'未确认消费'])
 
-
-
-
-
     </div>
 
 @endsection
