@@ -2,7 +2,7 @@
 
     <p class="label label-success">分值:{{ $task->point->points }}</p>
     <a class="label label-info" href="{{ url('tasks').'/'.$task->id }}">评论数：{{ count($task->comments) }}</a>
-    <p class="label label-info">小区:{{ $task->sender->profile->garden?$task->sender->profile->garden->name:'无' }}</p>
+    <p class="label label-info">小区:{{ $task->sender->profile?($task->sender->profile->garden?$task->sender->profile->garden->name:'无'):'无' }}</p>
     <p class="text-primary text-left lead">
         <a href="{{ url('tasks').'/'.$task->id }}">{{ $task->content }}</a>
     </p>
