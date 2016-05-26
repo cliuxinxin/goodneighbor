@@ -1,12 +1,12 @@
 <div class="well well-lg col-md-12">
 
-    <p class="label label-success">分值:{{ $task->point->points }}</p> <a class="label label-info" href="{{ url('tasks').'/'.$task->id }}">评论数：{{ count($task->comments) }}</a>
+    <p class="label label-success">分值:{{ $task->point->points }}</p>
+    <a class="label label-info" href="{{ url('tasks').'/'.$task->id }}">评论数：{{ count($task->comments) }}</a>
+    <p class="label label-info">小区:{{ $task->sender->profile->garden?$task->sender->profile->garden->name:'无' }}</p>
     <p class="text-primary text-left lead">
         <a href="{{ url('tasks').'/'.$task->id }}">{{ $task->content }}</a>
     </p>
-    <p>
 
-    </p>
 
 
     <div class="row">
@@ -69,27 +69,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-            {{--@if($task->isConfirmed())--}}
-                {{--<div class="btn btn-info">已完成</div>--}}
-            {{--@endif--}}
-
-        {{--</div>--}}
-
-        {{--<div class="col-md-1">--}}
-
-        {{--</div>--}}
-
-        {{--<div class="col-md-3">--}}
-
-        {{--</div>--}}
-
-
 </div>

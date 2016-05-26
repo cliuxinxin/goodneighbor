@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Garden;
 use App\Http\Requests\TaskRequest;
 use App\Http\Requests;
 use App\Point;
@@ -46,6 +47,7 @@ class TasksController extends Controller
 
         return view('tasks.index',compact('tasks'));
     }
+
 
     /**
      * User receive tasks.
