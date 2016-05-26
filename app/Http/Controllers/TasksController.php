@@ -7,6 +7,7 @@ use App\Garden;
 use App\Http\Requests\TaskRequest;
 use App\Http\Requests;
 use App\Point;
+use App\Profile;
 use App\Task;
 use Auth;
 
@@ -43,7 +44,7 @@ class TasksController extends Controller
      */
     public function userTasks()
     {
-        $tasks = $this->user->sendTasks()->paginate(10);
+        $tasks = $this->user->sendTasks()->latest('created_at')->paginate(10);
 
         return view('tasks.index',compact('tasks'));
     }
@@ -56,7 +57,27 @@ class TasksController extends Controller
      */
     public function receiveTasks()
     {
-        $tasks = $this->user->recieveTasks()->paginate(10);
+        $tasks = $this->user->recieveTasks()->latest('created_at')->paginate(10);
+
+        return view('tasks.index',compact('tasks'));
+    }
+
+    /**
+     * User garden tasks
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function gardenTasks()
+    {
+
+        $profiles = $this->user->profile->garden->profile;
+
+        foreach($profiles as $profile){
+            $user_ids[] = $profile->user_id;
+        }
+
+        $tasks=Task::whereIn('sender_id',$user_ids)->latest('created_at')->paginate(10);
+
 
         return view('tasks.index',compact('tasks'));
     }
