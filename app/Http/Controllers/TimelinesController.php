@@ -119,7 +119,7 @@ class TimelinesController extends Controller
                     'user_id' => $task->receiver->id,
                     'type' => '提供帮助',
                     'task_id' => $task->id,
-                    'time' => $task->updated_at
+                    'time' => $task->updated_at->addSecond()
                 ]);
             }
         }
