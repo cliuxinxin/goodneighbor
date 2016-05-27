@@ -119,7 +119,7 @@ class TimelinesController extends Controller
                     'user_id' => $task->receiver->id,
                     'type' => '提供帮助',
                     'task_id' => $task->id,
-                    'time' => $task->updated_at->addSecond()
+                    'time' => $task->updated_at
                 ]);
             }
         }
@@ -167,7 +167,7 @@ class TimelinesController extends Controller
                     'type' => '帮助获得积分',
                     'task_id' => $point->task->id,
                     'action' => $point->points,
-                    'time' => $point->updated_at
+                    'time' => $point->updated_at->addSecond()
                 ]);
 
                 Timeline::firstOrCreate([
