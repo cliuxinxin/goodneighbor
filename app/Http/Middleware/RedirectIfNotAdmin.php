@@ -17,7 +17,7 @@ class RedirectIfNotAdmin
     {
         $response = $next($request);
 
-        if(!$request->user()->isAdmin()){
+        if(!$request->user()->isadmin()){
             return redirect('tasks');
         };
 

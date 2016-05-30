@@ -152,6 +152,17 @@ class User extends Authenticatable
         });
     }
 
+    /**
+     * Is the user is a admin
+     *
+     * @return bool
+     */
+    public function isAdmin()
+    {
+
+        return $this->profile()?$this->profile->role == '管理员':0;
+    }
+
 
 }
 

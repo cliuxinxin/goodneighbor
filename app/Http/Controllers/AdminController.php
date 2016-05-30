@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\EventRecord;
 use App\Task;
 use App\User;
 use Auth;
@@ -20,16 +21,11 @@ class AdminController extends Controller
 
     public function index()
     {
-        $users = User::all();
+        $users_count = User::all()->count();
 
-//        $date_label = $users->lists('created_at');
-//        $user_data =$users->lists('name');
+        $event_records = EventRecord::latest()->paginate(20);
 
-        $date_label = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"];
-        $user_data = [12, 19, 3, 5, 2, 3];
-        $tasks = Task::all();
-
-        return view('admin.index',compact('users','tasks','date_label','user_data'));
+        return view('admin.index',compact('users_count','event_records'));
     }
 
     public function test()

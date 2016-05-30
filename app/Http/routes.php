@@ -48,3 +48,6 @@ Route::post('/comments/{tasks}','CommentsController@store');
 #Timelines
 Route::get('timelines/generate','TimelinesController@generate');
 Route::get('timelines/{user}','TimelinesController@show');
+
+#Admin
+Route::get('admin','AdminController@index');
