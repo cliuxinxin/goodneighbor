@@ -25,6 +25,16 @@ class User extends Authenticatable
     ];
 
     /**
+     * User has many topics
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function topics()
+    {
+    return $this->belongsToMany('App\Topic')->withTimestamps();
+    }
+
+    /**
      * A user has many commnets
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -162,6 +172,8 @@ class User extends Authenticatable
 
         return $this->profile()?$this->profile->role == '管理员':0;
     }
+
+
 
 
 }

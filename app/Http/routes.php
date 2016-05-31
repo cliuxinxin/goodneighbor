@@ -51,3 +51,9 @@ Route::get('timelines/{user}','TimelinesController@show');
 
 #Admin
 Route::get('admin','AdminController@index');
+
+#Topic
+Route::get('topics/get','TopicsController@get');
+Route::get('topics/index','TopicsController@index');
+Route::get('topics/seen/{topics}','TopicsController@seen');
+Route::get('topics/unseen/{topics}','TopicsController@unseen');
