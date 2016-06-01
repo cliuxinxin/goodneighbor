@@ -3,6 +3,8 @@
 
 @section('content')
 
+    <div class="alert alert-success">比特币实时价格:<strong>{{ $bit_coin_price['buy']}}</strong></div>
+
     <h1>高清电影</h1>
 
     @if(count($gaoqings))

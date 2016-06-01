@@ -43,8 +43,7 @@ class TopicsController extends Controller
 
     public function test()
     {
-
-
+        return json_decode($this->getBitCoinPrice(), true);
     }
     /**
      * Show index
@@ -57,7 +56,10 @@ class TopicsController extends Controller
 
         $meijus = Topic::where('type', '迅播美剧')->latest()->paginate(10);
 
-        return view('topics.index',compact('gaoqings','meijus'));
+        $bit_coin_price = json_decode($this->getBitCoinPrice(), true);
+
+
+        return view('topics.index',compact('gaoqings','meijus','bit_coin_price'));
     }
 
     /**
@@ -225,6 +227,18 @@ class TopicsController extends Controller
         foreach ($meijus as $meiju) {
             Topic::firstOrCreate($meiju);
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBitCoinPrice()
+    {
+        $crawler = Goutte::request('GET', 'http://api.btctrade.com/api/ticker?coin=btc');
+
+        $nodeValues = $crawler->text();
+
+        return $nodeValues;
     }
 
 }
