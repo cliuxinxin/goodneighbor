@@ -143,7 +143,7 @@ class TopicsController extends Controller
 
         });
 
-        if(longth(end($nodeValues2))>10){
+        if(strlen(end($nodeValues2))>10){
             Topic::firstOrCreate([
                 'type' => '高清剧集详细',
                 'detail' => $detail,
@@ -151,7 +151,7 @@ class TopicsController extends Controller
                 'comment' => $url
             ]);
         }
-        
+
     }
 
     /**
