@@ -24,16 +24,43 @@ class TopicsController extends Controller
         $this->user = Auth::user();
     }
 
+    /**
+     * Get info
+     *
+     * @return string
+     */
     public function get()
     {
         $this->getGaoQingLaUpdate();
 
         $this->getGaoQingLaDetailAuto();
 
+        $this->getXunBoMeiJuList();
+
         return 'OK';
 
     }
 
+    public function test()
+    {
+        $crawler = Goutte::request('GET', 'http://www.xiamp4.com/Html/GP23194.html');
+
+//        $nodeValues = $crawler->filter('.d5')->each(function (Crawler $node, $i) {
+//
+//            return $node->text();
+//
+//        });
+
+        $url = $crawler->filter('a')->last()->attr('href');
+        dump($crawler);
+
+        return 'OK';
+    }
+    /**
+     * Show index
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $gaoqings = Topic::where('type', '高清剧集详细')->latest()->paginate(10);
@@ -116,12 +143,15 @@ class TopicsController extends Controller
 
         });
 
-        Topic::firstOrCreate([
-            'type' => '高清剧集详细',
-            'detail' => $detail,
-            'url' => end($nodeValues2),
-            'comment' => $url
-        ]);
+        if(longth(end($nodeValues2))>10){
+            Topic::firstOrCreate([
+                'type' => '高清剧集详细',
+                'detail' => $detail,
+                'url' => end($nodeValues2),
+                'comment' => $url
+            ]);
+        }
+        
     }
 
     /**
@@ -135,4 +165,28 @@ class TopicsController extends Controller
             $this->getGaoQingLaDetail($gaoqing->detail, $gaoqing->url);
         }
     }
+
+    /**
+     * @return mixed
+     */
+    public function getXunBoMeiJuList()
+    {
+        $crawler = Goutte::request('GET', 'http://www.xiamp4.com/GvodHtml/11.html');
+
+        $nodeValues = $crawler->filter('.info h2 a')->each(function (Crawler $node, $i) {
+
+            return [$node->attr('title'), $node->attr('href')];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate([
+                'type' => '美剧',
+                'detail' => $nodeValue[0],
+                'url' => $nodeValue[1]
+            ]);
+        }
+
+    }
+
 }

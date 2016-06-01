@@ -23,6 +23,12 @@ class Topic extends Model
         return $this->belongsToMany('App\User');
     }
 
+    /**
+     * Is this user see
+     *
+     * @param $auth_user
+     * @return bool
+     */
     public function isSeenBy($auth_user)
     {
         foreach($this->users()->get() as $user){
