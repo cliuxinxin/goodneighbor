@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Topic;
 use Auth;
 use Goutte;
-use Illuminate\Http\Request;
+use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
 use App\Http\Requests;
@@ -35,7 +35,7 @@ class TopicsController extends Controller
 
         $this->getGaoQingLaDetailAuto();
 
-        $this->getXunBoMeiJuList();
+        $this->getXunBoMeiJu();
 
         return 'OK';
 
@@ -43,18 +43,8 @@ class TopicsController extends Controller
 
     public function test()
     {
-        $crawler = Goutte::request('GET', 'http://www.xiamp4.com/Html/GP23194.html');
 
-//        $nodeValues = $crawler->filter('.d5')->each(function (Crawler $node, $i) {
-//
-//            return $node->text();
-//
-//        });
 
-        $url = $crawler->filter('a')->last()->attr('href');
-        dump($crawler);
-
-        return 'OK';
     }
     /**
      * Show index
@@ -65,7 +55,9 @@ class TopicsController extends Controller
     {
         $gaoqings = Topic::where('type', '高清剧集详细')->latest()->paginate(10);
 
-        return view('topics.index',compact('gaoqings'));
+        $meijus = Topic::where('type', '迅播美剧')->latest()->paginate(10);
+
+        return view('topics.index',compact('gaoqings','meijus'));
     }
 
     /**
@@ -187,6 +179,52 @@ class TopicsController extends Controller
             ]);
         }
 
+    }
+
+    public function getXunBoMeiJu()
+    {
+        $crawler = Goutte::request('GET', 'http://www.xiamp4.com/GvodHtml/11.html');
+
+        $nodeValues = $crawler->filter('.info p i')->each(function (Crawler $node, $i) {
+
+            return $node->text();
+
+        });
+
+        $status = [];
+        $dates = [];
+
+        foreach ($nodeValues as $nodeValue) {
+            if (strpos($nodeValue, '状态：') !== false) {
+                $status[] = $nodeValue;
+            }
+
+            if (strpos($nodeValue, '更新：') !== false) {
+                $dates[] = $nodeValue;
+            }
+        }
+
+
+        $nodeValues = $crawler->filter('.info h2 a')->each(function (Crawler $node, $i) {
+
+            return [$node->attr('title'), $node->attr('href') . '#down'];
+
+        });
+
+        $meijus = [];
+
+        foreach ($nodeValues as $key => $nodeValue) {
+            $meijus[] = [
+                'type' => '迅播美剧',
+                'detail' => $nodeValue[0],
+                'url' => 'http://www.xiamp4.com/' . $nodeValue[1],
+                'comment' => $status[$key] . ' ' . $dates[$key]
+            ];
+        }
+
+        foreach ($meijus as $meiju) {
+            Topic::firstOrCreate($meiju);
+        }
     }
 
 }
