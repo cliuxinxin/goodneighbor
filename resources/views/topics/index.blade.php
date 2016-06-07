@@ -3,7 +3,8 @@
 
 @section('content')
 
-    <div class="alert alert-success">比特币实时价格:<strong>{{ $bit_coin_price['buy']}}</strong></div>
+    <div class="alert alert-success">比特币价:<strong>{{ $bit_coin_price['buy']}}</strong></div>
+    <div class="alert alert-info">上证指数:<strong>{{ $stock_price }}</strong></div>
 
     <h1>高清电影</h1>
 

@@ -166,6 +166,7 @@ return [
          */
         Weidner\Goutte\GoutteServiceProvider::class,
 
+        Mattbrown\Laracurl\LaracurlServiceProvider::class,
 
     ],
 
@@ -215,6 +216,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Goutte' => Weidner\Goutte\GoutteFacade::class,
+        'laracurl' =>  Mattbrown\Laracurl\Facades\Laracurl::class,
 
     ],
 

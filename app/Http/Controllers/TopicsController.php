@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Topic;
 use Auth;
 use Goutte;
-use Goutte\Client;
+use Illuminate\Http\Request;
+use Laracurl;
 use Symfony\Component\DomCrawler\Crawler;
 
 use App\Http\Requests;
@@ -43,8 +44,16 @@ class TopicsController extends Controller
 
     public function test()
     {
-        return json_decode($this->getBitCoinPrice(), true);
+
+//        $request = Request::create('http://api.money.126.net/data/feed/0000001,money.api', 'GET');
+//        $crawler = Goutte::request('GET', 'http://api.money.126.net/data/feed/0000001,money.api');
+
+        return $this->getStockPrice();
+
     }
+
+
+
     /**
      * Show index
      *
@@ -58,8 +67,10 @@ class TopicsController extends Controller
 
         $bit_coin_price = json_decode($this->getBitCoinPrice(), true);
 
+        $stock_price = $this->getStockPrice();
 
-        return view('topics.index',compact('gaoqings','meijus','bit_coin_price'));
+
+        return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price'));
     }
 
     /**
@@ -240,5 +251,18 @@ class TopicsController extends Controller
 
         return $nodeValues;
     }
+
+    /**
+     * @return string
+     */
+    public function getStockPrice()
+    {
+        $response = Laracurl::get('http://api.money.126.net/data/feed/0000001,money.api');
+
+        $json_string = substr($response, strpos($response->body, '"price":') + 8, 8);
+
+        return $json_string;
+    }
+
 
 }
