@@ -3,13 +3,14 @@
     <p class="label label-success">分值:{{ $task->point->points }}</p>
     <a class="label label-info" href="{{ url('tasks').'/'.$task->id }}">评论数：{{ count($task->comments) }}</a>
     <p class="label label-info">小区:{{ $task->sender->profile?($task->sender->profile->garden?$task->sender->profile->garden->name:'无'):'无' }}</p>
-    <p class="text-primary text-left lead">
+    <p class="text-primary text-left lead top-20">
         <a href="{{ url('tasks').'/'.$task->id }}">{{ $task->content }}</a>
     </p>
 
 
 
-    <div class="row">
+
+    <div class="row top-20">
         <div class="stepwizard">
             <div class="stepwizard-row">
                 <div class="stepwizard-step">
