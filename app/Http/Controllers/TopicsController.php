@@ -38,6 +38,10 @@ class TopicsController extends Controller
 
         $this->getXunBoMeiJu();
 
+        $this->getBangumi(3461);
+
+        $this->getBangumi(3218);
+
         return 'OK';
 
     }
@@ -45,10 +49,7 @@ class TopicsController extends Controller
     public function test()
     {
 
-//        $request = Request::create('http://api.money.126.net/data/feed/0000001,money.api', 'GET');
-//        $crawler = Goutte::request('GET', 'http://api.money.126.net/data/feed/0000001,money.api');
-
-        return $this->getStockPrice();
+        $this->getBangumi();
 
     }
 
@@ -65,12 +66,14 @@ class TopicsController extends Controller
 
         $meijus = Topic::where('type', '迅播美剧')->latest()->paginate(10);
 
+        $bangumis = Topic::where('type', '动画番剧')->latest()->paginate(10);
+
         $bit_coin_price = json_decode($this->getBitCoinPrice(), true);
 
         $stock_price = $this->getStockPrice();
 
 
-        return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price'));
+        return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price','bangumis'));
     }
 
     /**
@@ -262,6 +265,24 @@ class TopicsController extends Controller
         $json_string = substr($response, strpos($response->body, '"price":') + 8, 8);
 
         return $json_string;
+    }
+
+    public function getBangumi($bangumicode)
+    {
+        $crawler = Goutte::request('GET', 'http://bangumi.bilibili.com/anime/'.$bangumicode.'/');
+
+        $nodeValues = $crawler->filter('a.v1-long-text')->each(function (Crawler $node, $i) {
+
+            return [$node->attr('title')];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate([
+                'type' => '动画番剧',
+                'detail' => $nodeValue[0],
+            ]);
+        }
     }
 
 

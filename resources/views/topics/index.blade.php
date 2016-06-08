@@ -67,4 +67,32 @@
         {{ $meijus->links()  }}
     @endif
 
+    @if(count($bangumis))
+
+        <h1>动画番剧</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>名字</th>
+                <th>更新时间</th>
+                <th>是否处理</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($bangumis as $bangumi)
+                <tr>
+                    <td>{{ $bangumi->detail }}</a></td>
+                    <td>{{ $meiju->created_at }}</td>
+                    @if( $meiju->isSeenBy(Auth::user()))
+                        <td><a href={{ url('topics/unseen').'/'.$bangumi->id }} class="btn btn-danger">取消标记</a></td>
+                    @else
+                        <td><a href={{ url('topics/seen').'/'.$bangumi->id }} class="btn btn-success">标记处理</a></td>
+                    @endif
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+        {{ $bangumis->links()  }}
+    @endif
+
 @endsection
