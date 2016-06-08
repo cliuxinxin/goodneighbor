@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\EventRecord;
+use App\Garden;
 use App\Task;
 use App\User;
 use Auth;
@@ -15,10 +16,15 @@ class AdminController extends Controller
 
     public function __construct()
     {
-        $this->middleware('admin')->only(['index']);
+        $this->middleware('admin')->only(['index','gardens']);
     }
 
 
+    /**
+     * Over all review
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $users_count = User::all()->count();
@@ -26,6 +32,13 @@ class AdminController extends Controller
         $event_records = EventRecord::latest()->paginate(20);
 
         return view('admin.index',compact('users_count','event_records'));
+    }
+
+    public function gardens()
+    {
+        $gardens = Garden::all();
+
+        return view('admin.gardens',compact('gardens'));
     }
 
     public function test()

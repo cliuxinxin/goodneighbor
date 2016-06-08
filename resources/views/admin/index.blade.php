@@ -5,9 +5,13 @@
 
     <h1>管理界面</h1>
 
+
+
     <div class="alert alert-success">
         用户人数：<strong>{{ $users_count }}</strong>
     </div>
+
+    <a class="btn btn-lg btn-default" href="{{ url('admin/gardens') }}">小区浏览</a>
 
     @if(count($event_records))
     <h2>登录情况</h2>

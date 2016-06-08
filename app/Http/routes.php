@@ -51,6 +51,7 @@ Route::get('timelines/{user}','TimelinesController@show');
 
 #Admin
 Route::get('admin','AdminController@index');
+Route::get('admin/gardens','AdminController@gardens');
 
 #Topic
 Route::get('topics/get','TopicsController@get');
