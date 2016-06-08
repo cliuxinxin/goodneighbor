@@ -6,6 +6,13 @@
     <div class="alert alert-success">比特币价:<strong>{{ $bit_coin_price['buy']}}</strong></div>
     <div class="alert alert-info">上证指数:<strong>{{ $stock_price }}</strong></div>
 
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="#gaoqing">高清电影</a></li>
+        <li role="presentation"><a href="#xunbo">迅播美剧</a></li>
+        <li role="presentation"><a href="#bangumi">动画番剧</a></li>
+    </ul>
+
+    <a name="gaoqing"></a>
     <h1>高清电影</h1>
 
     @if(count($gaoqings))
@@ -39,6 +46,7 @@
 
     @if(count($meijus))
 
+        <a name="xunbo"></a>
         <h1>迅播美剧</h1>
         <table class="table table-striped">
             <thead>
@@ -69,6 +77,7 @@
 
     @if(count($bangumis))
 
+        <a name="bangumi"></a>
         <h1>动画番剧</h1>
         <table class="table table-striped">
             <thead>
