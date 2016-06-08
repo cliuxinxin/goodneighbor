@@ -52,6 +52,9 @@ Route::get('timelines/{user}','TimelinesController@show');
 #Admin
 Route::get('admin','AdminController@index');
 Route::get('admin/gardens','AdminController@gardens');
+Route::get('admin/gardens/create','AdminController@gardensCreate');
+Route::post('admin/gardens/create','AdminController@gardensStore');
+Route::delete('admin/gardens/delete/{gardens}','AdminController@gardensDelete');
 
 #Topic
 Route::get('topics/get','TopicsController@get');
