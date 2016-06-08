@@ -84,8 +84,8 @@
                 <tr>
                     <td>{{ $bangumi->comment }}</td>
                     <td>{{ $bangumi->detail }}</td>
-                    <td>{{ $meiju->created_at }}</td>
-                    @if( $meiju->isSeenBy(Auth::user()))
+                    <td>{{ $bangumi->created_at }}</td>
+                    @if( $bangumi->isSeenBy(Auth::user()))
                         <td><a href={{ url('topics/unseen').'/'.$bangumi->id }} class="btn btn-danger">取消标记</a></td>
                     @else
                         <td><a href={{ url('topics/seen').'/'.$bangumi->id }} class="btn btn-success">标记处理</a></td>
