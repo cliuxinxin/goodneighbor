@@ -49,7 +49,15 @@ class TopicsController extends Controller
     public function test()
     {
 
-        $this->getBangumi();
+        $crawler = Goutte::request('GET', 'http://bangumi.bilibili.com/anime/3461/');
+
+        $nodeValues = $crawler->filter('.info-title')->each(function (Crawler $node, $i) {
+
+            return $node->attr('title');
+
+        });
+
+        return $nodeValues[0];
 
     }
 
@@ -277,10 +285,17 @@ class TopicsController extends Controller
 
         });
 
+        $title = $crawler->filter('.info-title')->each(function (Crawler $node, $i) {
+
+            return $node->attr('title');
+
+        });
+
         foreach ($nodeValues as $nodeValue) {
             Topic::firstOrCreate([
                 'type' => '动画番剧',
                 'detail' => $nodeValue[0],
+                'comment' => $title[0],
             ]);
         }
     }
