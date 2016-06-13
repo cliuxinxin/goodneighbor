@@ -7,6 +7,7 @@
     <div class="alert alert-info">上证指数:<strong>{{ $stock_price }}</strong></div>
 
     <ul class="nav nav-pills">
+        <li role="presentation"><a href={{ url('topics/xunbo') }}>迅播美剧列表</a></li>
         <li role="presentation"><a href="#gaoqing">高清电影</a></li>
         <li role="presentation"><a href="#xunbo">迅播美剧</a></li>
         <li role="presentation"><a href="#bangumi">动画番剧</a></li>

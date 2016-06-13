@@ -46,18 +46,35 @@ class TopicsController extends Controller
 
     }
 
+    /**
+     * Get xunbo list
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function xunbo()
+    {
+        $xunbolists = Topic::where('type','迅播美剧')->get()->lists('detail');
+
+        foreach ($xunbolists as $xunbolist) {
+            Topic::firstOrCreate([
+                'type' => '迅播列表',
+                'detail' => $xunbolist,
+            ]);
+        }
+
+        $xunbolists = Topic::where('type', '迅播列表')->latest()->paginate(10);
+
+        return view('topics.xunbo',compact('xunbolists'));
+    }
+
     public function test()
     {
 
-        $crawler = Goutte::request('GET', 'http://bangumi.bilibili.com/anime/3461/');
+        $topics = $this->user->topics()->where('type','迅播列表')->lists('detail');
 
-        $nodeValues = $crawler->filter('.info-title')->each(function (Crawler $node, $i) {
+        $meijus = Topic::where('type', '迅播美剧')->whereIn('detail',$topics)->get();
 
-            return $node->attr('title');
-
-        });
-
-        return $nodeValues[0];
+        return $meijus;
 
     }
 
@@ -72,7 +89,12 @@ class TopicsController extends Controller
     {
         $gaoqings = Topic::where('type', '高清剧集详细')->latest()->paginate(10);
 
-        $meijus = Topic::where('type', '迅播美剧')->latest()->paginate(10);
+        $xunbolist = $this->user->topics()->where('type','迅播列表')->lists('detail');
+
+        $meijus = Topic::where('type', '迅播美剧')->whereIn('detail',$xunbolist)->paginate(10);
+
+
+//        $meijus = Topic::where('type', '迅播美剧')->latest()->paginate(10);
 
         $bangumis = Topic::where('type', '动画番剧')->latest()->paginate(10);
 
@@ -95,7 +117,7 @@ class TopicsController extends Controller
 
         $this->user->topics()->sync([$topic], false);
 
-        return redirect('topics/index');
+        return redirect()->back();
     }
 
     /**
@@ -108,8 +130,7 @@ class TopicsController extends Controller
     {
         $this->user->topics()->detach($topic);
 
-        return redirect('topics/index');
-
+        return redirect()->back();
     }
 
 
@@ -275,6 +296,11 @@ class TopicsController extends Controller
         return $json_string;
     }
 
+    /**
+     * Get Bangumi
+     *
+     * @param $bangumicode
+     */
     public function getBangumi($bangumicode)
     {
         $crawler = Goutte::request('GET', 'http://bangumi.bilibili.com/anime/'.$bangumicode.'/');
