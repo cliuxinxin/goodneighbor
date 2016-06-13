@@ -91,7 +91,7 @@ class TopicsController extends Controller
 
         $xunbolist = $this->user->topics()->where('type','迅播列表')->lists('detail');
 
-        $meijus = Topic::where('type', '迅播美剧')->whereIn('detail',$xunbolist)->paginate(10);
+        $meijus = Topic::where('type', '迅播美剧')->whereIn('detail',$xunbolist)->latest()->paginate(10);
 
 
 //        $meijus = Topic::where('type', '迅播美剧')->latest()->paginate(10);
