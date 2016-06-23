@@ -87,6 +87,7 @@
                 <li><a href="{{ url('/usertasks') }}">我的求助</a></li>
                 <li><a href="{{ url('/receivetasks') }}">我的帮忙</a></li>
                 <li><a href="{{ url('/profile'.'/'.Auth::user()->id) }}">我的档案</a></li>
+                <li><a href="{{ url('/topics/index') }}">我的追剧</a></li>
             </ul>
             @endif
 
@@ -105,7 +106,6 @@
                     @if(Auth::user()->profile?Auth::user()->isAdmin():0)
                         <li><a href="{{ url('/admin') }}">管理</a></li>
                     @endif
-                    <li><a href="{{ url('/topics/index') }}">追剧</a></li>
                     <li><a href="{{ url('/logout') }}">登出</a></li>
                 </ul>
                  </li>
