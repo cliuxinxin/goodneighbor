@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('header')
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+@endsection
+
 
 @section('content')
 
@@ -7,7 +11,7 @@
 
     @if(count($xunbolists))
 
-        <table class="table table-striped">
+        <table class="table table-striped" data-toggle="table" data-search="true">
             <thead>
             <tr>
                 <th>名字</th>
@@ -31,4 +35,9 @@
     @endif
 
 
+@endsection
+
+@section('footer')
+        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-zh-CN.min.js"></script>
 @endsection

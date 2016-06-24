@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c57591a-ea60-4475-a275-be351c2bdfa5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Topic.php" afterPath="$PROJECT_DIR$/app/Topic.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/topics/xunbo.blade.php" afterPath="$PROJECT_DIR$/resources/views/topics/xunbo.blade.php" />
     </list>
     <ignored path="goodneighbor.iws" />
@@ -30,8 +27,8 @@
       <file leaf-file-name="xunbo.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/topics/xunbo.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31329924">
-              <caret line="19" column="78" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.769821">
+              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -585,24 +582,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.142857">
-          <caret line="218" column="17" selection-start-line="218" selection-start-column="9" selection-end-line="218" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Garden.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-24.142857">
           <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.928572">
-          <caret line="15" column="0" selection-start-line="14" selection-start-column="83" selection-end-line="16" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -795,10 +778,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61764705">
+          <caret line="218" column="17" selection-start-line="218" selection-start-column="9" selection-end-line="218" selection-end-column="17" />
+          <folding>
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder=" Form helper ..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder=" Goutte ..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464842429136" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5792839">
+          <caret line="25" column="66" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
+          <folding>
+            <marker date="1464167029304" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464167029304" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464167029304" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464167029304" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/topics/xunbo.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31329924">
-          <caret line="19" column="78" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.769821">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding />
         </state>
       </provider>
