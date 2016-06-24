@@ -11,7 +11,7 @@
 
     @if(count($xunbolists))
 
-        <table class="table table-striped" data-toggle="table" data-search="true">
+        <table class="table table-striped" data-toggle="table" data-search="true" data-pagination="true">
             <thead>
             <tr>
                 <th>名字</th>
