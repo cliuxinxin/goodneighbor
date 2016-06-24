@@ -31,7 +31,6 @@
             @endforeach
             </tbody>
         </table>
-        {{ $xunbolists->links()  }}
     @endif
 
 

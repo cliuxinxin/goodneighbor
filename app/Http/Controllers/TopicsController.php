@@ -64,7 +64,7 @@ class TopicsController extends Controller
 
         $this->getMeijuListUrl();
 
-        $xunbolists = Topic::where('type', '迅播列表')->latest()->paginate(10);
+        $xunbolists = Topic::where('type', '迅播列表')->latest()->get();
 
         return view('topics.xunbo',compact('xunbolists'));
     }
