@@ -17,7 +17,7 @@
             <tbody>
             @foreach($xunbolists as $xunbolist)
                 <tr>
-                    <td>{{ $xunbolist->detail }}</td>
+                    <td><a href={{ $xunbolist->url }}>{{ $xunbolist->detail }}</a></td>
                     @if( $xunbolist->isSeenBy(Auth::user()))
                         <td><a href={{ url('topics/unseen').'/'.$xunbolist->id }} class="btn btn-danger">取消标记</a></td>
                     @else

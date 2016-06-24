@@ -62,6 +62,8 @@ class TopicsController extends Controller
             ]);
         }
 
+        $this->getMeijuListUrl();
+
         $xunbolists = Topic::where('type', '迅播列表')->latest()->paginate(10);
 
         return view('topics.xunbo',compact('xunbolists'));
@@ -70,9 +72,7 @@ class TopicsController extends Controller
     public function test()
     {
 
-        $topics = $this->user->topics()->where('type','迅播列表')->lists('detail');
-
-        $meijus = Topic::where('type', '迅播美剧')->whereIn('detail',$topics)->get();
+        $meijus = $this->getMeijuListUrl();
 
         return $meijus;
 
@@ -323,6 +323,21 @@ class TopicsController extends Controller
                 'detail' => $nodeValue[0],
                 'comment' => $title[0],
             ]);
+        }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMeijuListUrl()
+    {
+        $meijus = Topic::where('type', '迅播列表')->where('url', '')->get();
+
+        foreach ($meijus as $meiju) {
+            $meijuUrl = Topic::where('type', '迅播美剧')->where('detail', $meiju->detail)->first();
+
+            $meiju->update(['url' => $meijuUrl->url]);
+
         }
     }
 
