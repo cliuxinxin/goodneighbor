@@ -6,7 +6,7 @@
       {!! Form::open(['url' => url('locations/save')]) !!}
 
          <div class="form-group">
-            {!! Form::submit('提供位置',['class' => 'btn btn-primary form-control','id' => 'getLocation']) !!}
+            {!! Form::submit('提供位置',['class' => 'btn btn-primary form-control','onclick' => 'getLocation()']) !!}
          </div>
 
       {!! Form::close() !!}
@@ -18,6 +18,7 @@
 
    <script>
       var x=document.getElementById("getLocation");
+
       function getLocation()
       {
          if (navigator.geolocation)
@@ -26,6 +27,7 @@
          }
          else{x.innerHTML="Geolocation is not supported by this browser.";}
       }
+
       function showPosition(position)
       {
          x.innerHTML="Latitude: " + position.coords.latitude +
