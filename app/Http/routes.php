@@ -64,3 +64,7 @@ Route::get('topics/test','TopicsController@test');
 Route::get('topics/seen/{topics}','TopicsController@seen');
 Route::get('topics/unseen/{topics}','TopicsController@unseen');
 
+#Location
+Route::get('locations/get','LocationsController@get');
+Route::post('locations/save','LocationsController@save');
+
