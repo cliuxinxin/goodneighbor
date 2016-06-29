@@ -13,16 +13,7 @@ use Auth;
 
 class TasksController extends Controller
 {
-    protected $user;
 
-    /**
-     * Only auth user can create a task.
-     */
-    public function __construct()
-    {
-        $this->middleware('auth')->only(['create','take','store']);
-        $this->user = Auth::user();
-    }
 
 
     /**

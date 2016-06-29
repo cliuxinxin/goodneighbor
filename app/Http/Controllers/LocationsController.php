@@ -15,8 +15,9 @@ class LocationsController extends Controller
         return view('locations.get');
     }
 
-    public function save()
+    public function save(Request $request)
     {
-        return view('locations.save');
+        return $request->all();
+//        return view('locations.save');
     }
 }
