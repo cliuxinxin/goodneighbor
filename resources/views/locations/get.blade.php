@@ -35,8 +35,6 @@
          if (navigator.geolocation)
          {
             navigator.geolocation.getCurrentPosition(showPosition);
-            alert(latitude.value);
-            document.forms["form"].submit();
          }
          else{
             latitude.value = "Geolocation is not supported by this browser.";}
@@ -46,6 +44,7 @@
       {
          latitude.value =  position.coords.latitude;
          longitude.value = position.coords.longitude;
+         document.forms["form"].submit();
       }
    </script>
 
