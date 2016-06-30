@@ -6,11 +6,11 @@
       {!! Form::open(['url' => url('locations/save')]) !!}
 
          <div class="form-group">
-            {{ Form::hidden('latitude', '0') }}
+            {{ Form::hidden('latitude', '0',['id' => 'latitude']) }}
          </div>
 
          <div class="form-group">
-            {{ Form::hidden('longitude', '0') }}
+            {{ Form::hidden('longitude', '0',['id' => 'longitude']) }}
          </div>
 
          <div class="form-group">
@@ -20,28 +20,30 @@
       {!! Form::close() !!}
    </div>
 
+
 @endsection
 
 @section('footer')
 
    <script>
-      f = document.forms[0];
-      latitude = f.latitude;
-      longitude = f.longitude;
+      var latitude = document.getElementById("latitude");
+      var longitude = document.getElementById("longitude");
 
       function getLocation()
       {
          if (navigator.geolocation)
          {
             navigator.geolocation.getCurrentPosition(showPosition);
+            alert(latitude.value);
          }
-         else{ latitude = "Geolocation is not supported by this browser.";}
+         else{
+            latitude.value = "Geolocation is not supported by this browser.";}
       }
 
       function showPosition(position)
       {
-         latitude =  position.coords.latitude;
-         longitude = position.coords.longitude;
+         latitude.value =  position.coords.latitude;
+         longitude.value = position.coords.longitude;
       }
    </script>
 
