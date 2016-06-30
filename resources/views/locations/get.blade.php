@@ -14,7 +14,8 @@
          </div>
 
          <div class="form-group">
-            {!! Form::submit('提供位置',['class' => 'btn btn-primary form-control','onclick' => 'getLocation()']) !!}
+{{--            {!! Form::submit('提供位置',['class' => 'btn btn-primary form-control','onclick' => 'getLocation()']) !!}--}}
+               <button class="btn btn-success" onclick="getLocation()">提供位置</button>
          </div>
 
       {!! Form::close() !!}
@@ -35,6 +36,7 @@
          {
             navigator.geolocation.getCurrentPosition(showPosition);
             alert(latitude.value);
+            document.forms["form"].submit();
          }
          else{
             latitude.value = "Geolocation is not supported by this browser.";}
