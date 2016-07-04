@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bible;
 use App\Topic;
 use Auth;
 use Goutte;
@@ -102,8 +103,9 @@ class TopicsController extends Controller
 
         $stock_price = $this->getStockPrice();
 
+        $bible = Bible::find(rand(1,200));
 
-        return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price','bangumis'));
+        return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price','bangumis','bible'));
     }
 
     /**

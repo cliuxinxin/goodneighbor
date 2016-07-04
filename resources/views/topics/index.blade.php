@@ -3,6 +3,11 @@
 
 @section('content')
 
+    <blockquote>
+        <p>{{ $bible->content }}</p>
+        <footer>{{ $bible->volume }}:{{ $bible->chapter }}:{{ $bible->verse }}</footer>
+    </blockquote>
+
     <div class="alert alert-success">比特币价:<strong>{{ $bit_coin_price['buy']}}</strong></div>
     <div class="alert alert-info">上证指数:<strong>{{ $stock_price }}</strong></div>
 

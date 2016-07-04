@@ -68,3 +68,6 @@ Route::get('topics/unseen/{topics}','TopicsController@unseen');
 Route::get('locations/get','LocationsController@get');
 Route::post('locations/save','LocationsController@save');
 
+#Bible
+Route::get('bibles/get','BiblesController@get');
+
