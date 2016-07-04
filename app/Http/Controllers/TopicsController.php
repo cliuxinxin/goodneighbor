@@ -103,7 +103,7 @@ class TopicsController extends Controller
 
         $stock_price = $this->getStockPrice();
 
-        $bible = Bible::find(rand(1,200));
+        $bible = Bible::find(rand(1,31102));
 
         return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price','bangumis','bible'));
     }
