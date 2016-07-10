@@ -71,3 +71,6 @@ Route::post('locations/save','LocationsController@save');
 #Bible
 Route::get('bibles/get','BiblesController@get');
 
+#New Concept English
+Route::get('nce/get','NcesController@get');
+

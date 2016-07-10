@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bible;
+use App\Nce;
 use App\Topic;
 use Auth;
 use Goutte;
@@ -103,9 +104,10 @@ class TopicsController extends Controller
 
         $stock_price = $this->getStockPrice();
 
-        $bible = Bible::find(rand(1,31102));
+//        $bible = Bible::find(rand(1,31102));
+        $nce = Nce::find(rand(1,5937));
 
-        return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price','bangumis','bible'));
+        return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price','bangumis','nce'));
     }
 
     /**

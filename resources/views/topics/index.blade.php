@@ -4,8 +4,7 @@
 @section('content')
 
     <blockquote>
-        <p>{{ $bible->content }}</p>
-        <footer>{{ $bible->volume }}:{{ $bible->chapter }}:{{ $bible->verse }}</footer>
+        <p>{{ $nce->content }}</p>
     </blockquote>
 
     <div class="alert alert-success">比特币价:<strong>{{ $bit_coin_price['buy']}}</strong></div>
