@@ -89,7 +89,7 @@ class TopicsController extends Controller
      */
     public function index()
     {
-        $gaoqings = Topic::where('type', '高清剧集详细')->latest()->paginate(10);
+        $gaoqings = Topic::where('type', '高清剧集详细')->latest()->paginate(5);
 
         $xunbolist = $this->user->topics()->where('type','迅播列表')->lists('detail');
 
