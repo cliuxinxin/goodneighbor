@@ -93,12 +93,12 @@ class TopicsController extends Controller
 
         $xunbolist = $this->user->topics()->where('type','迅播列表')->lists('detail');
 
-        $meijus = Topic::where('type', '迅播美剧')->whereIn('detail',$xunbolist)->latest()->paginate(10);
+        $meijus = Topic::where('type', '迅播美剧')->whereIn('detail',$xunbolist)->latest()->paginate(5);
 
 
 //        $meijus = Topic::where('type', '迅播美剧')->latest()->paginate(10);
 
-        $bangumis = Topic::where('type', '动画番剧')->latest()->paginate(10);
+        $bangumis = Topic::where('type', '动画番剧')->latest()->paginate(5);
 
         $bit_coin_price = json_decode($this->getBitCoinPrice(), true);
 
