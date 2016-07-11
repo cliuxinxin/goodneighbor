@@ -105,7 +105,7 @@ class TopicsController extends Controller
         $stock_price = $this->getStockPrice();
 
 //        $bible = Bible::find(rand(1,31102));
-        $nce = Nce::find(rand(1,5937));
+        $nce = Nce::find(rand(1,5865));
 
         return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price','bangumis','nce'));
     }
