@@ -12,7 +12,7 @@ class NcesController extends Controller
     //
     public function get()
     {
-        $nce = Nce::find(rand(1,200));
+        $nce = Nce::find(rand(1,5865));
 
         return $nce;
     }
