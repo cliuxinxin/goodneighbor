@@ -40,6 +40,8 @@ class TopicsController extends Controller
 
         $this->getXunBoMeiJu();
 
+        $this->getXunBoDongman();
+
         $this->getBangumi(3461);
 
         $this->getBangumi(3218);
@@ -275,6 +277,53 @@ class TopicsController extends Controller
             Topic::firstOrCreate($meiju);
         }
     }
+
+    public function getXunBoDongman()
+    {
+        $crawler = Goutte::request('GET', 'http://www.xiamp4.com/GvodHtml/7.html');
+
+        $nodeValues = $crawler->filter('.info p i')->each(function (Crawler $node, $i) {
+
+            return $node->text();
+
+        });
+
+        $status = [];
+        $dates = [];
+
+        foreach ($nodeValues as $nodeValue) {
+            if (strpos($nodeValue, '状态：') !== false) {
+                $status[] = $nodeValue;
+            }
+
+            if (strpos($nodeValue, '更新：') !== false) {
+                $dates[] = $nodeValue;
+            }
+        }
+
+
+        $nodeValues = $crawler->filter('.info h2 a')->each(function (Crawler $node, $i) {
+
+            return [$node->attr('title'), $node->attr('href') . '#down'];
+
+        });
+
+        $meijus = [];
+
+        foreach ($nodeValues as $key => $nodeValue) {
+            $meijus[] = [
+                'type' => '迅播美剧',
+                'detail' => $nodeValue[0],
+                'url' => 'http://www.xiamp4.com/' . $nodeValue[1],
+                'comment' => $status[$key] . ' ' . $dates[$key]
+            ];
+        }
+
+        foreach ($meijus as $meiju) {
+            Topic::firstOrCreate($meiju);
+        }
+    }
+
 
     /**
      * @return mixed

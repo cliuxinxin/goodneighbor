@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c57591a-ea60-4475-a275-be351c2bdfa5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/NcesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/NcesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="goodneighbor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,12 +25,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NcesController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NcesController.php">
+      <file leaf-file-name="TopicsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TopicsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32124874">
-              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-              <folding />
+            <state vertical-scroll-proportion="0.3665628">
+              <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+              <folding>
+                <element signature="e#5178#6371#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,8 +94,8 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_10_110159_create_nces_table.php" />
         <option value="$PROJECT_DIR$/resources/views/topics/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NcesController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" />
       </list>
     </option>
   </component>
@@ -160,6 +163,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -168,186 +172,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="locations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="comments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goodneighbor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -479,83 +306,34 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NcesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1468936782057" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1468936782057" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1468936782057" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NcesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <marker date="1468936782057" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1468936782057" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1468936782057" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TopicsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="91" column="72" selection-start-line="91" selection-start-column="72" selection-end-line="91" selection-end-column="72" />
-          <folding>
-            <marker date="1468936750499" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Only auth user can create a task. ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Get info ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Get xunbo list ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Show index ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" User has seen a topic ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Ueser unseen a topic ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Get gaoqingla menu ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Get gaoqingla detal ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" @return string ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Get Bangumi ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -878,91 +656,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TopicsController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NcesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49647534">
-          <caret line="107" column="36" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.4672709">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <marker date="1468936750499" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Only auth user can create a task. ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Get info ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Get xunbo list ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Show index ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" User has seen a topic ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Ueser unseen a topic ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Get gaoqingla menu ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Get gaoqingla detal ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" @return string ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" Get Bangumi ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1468936750499" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1468936782057" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1468936782057" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1468936782057" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NcesController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TopicsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32124874">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding />
+        <state vertical-scroll-proportion="0.3665628">
+          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+          <folding>
+            <element signature="e#5178#6371#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
