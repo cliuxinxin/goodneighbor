@@ -37,4 +37,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 7、可以查看用户的时间线<br/>
 8、增加高清电影更新提醒<br/>
 9、增加迅播美剧更新<br/>
+10、增加美食分享部分<br/>
 99、手机注册，手机收验证码，手机找回密码<br/>
