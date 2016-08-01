@@ -14,6 +14,14 @@ use Auth;
 class TasksController extends Controller
 {
 
+    protected $user;
+
+    public function __construct()
+    {
+        if(!Auth::guest()){
+            $this->user = Auth::user();
+        }
+    }
 
 
     /**
