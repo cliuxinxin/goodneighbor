@@ -22,7 +22,7 @@
     @if(count($gaoqings))
         <a name="gaoqing"></a>
         <h1>高清电影</h1>
-        
+
 
         <table class="table table-striped">
             <thead>

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Bible;
 use App\Nce;
 use App\Topic;
 use Auth;
@@ -75,11 +74,15 @@ class TopicsController extends Controller
 
     public function test()
     {
+        $crawler = Goutte::request('GET', 'http://www.iwgc.cn/list/4700');
 
-        $meijus = $this->getMeijuListUrl();
+        $nodeValues = $crawler->filter('.list-group-item.clearfix')->each(function (Crawler $node, $i) {
 
-        return $meijus;
+            return [$node->attr('href'),$node->children()->eq(1)->children()->eq(0)->text(),$node->children()->eq(1)->children()->eq(2)->text()];
 
+        });
+
+        return $nodeValues;
     }
 
 
