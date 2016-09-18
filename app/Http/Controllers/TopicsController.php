@@ -23,7 +23,7 @@ class TopicsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->only(['seen']);
+        $this->middleware('auth')->only(['seen','index']);
         $this->user = Auth::user();
     }
 
