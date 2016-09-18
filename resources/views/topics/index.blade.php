@@ -3,9 +3,9 @@
 
 @section('content')
 
-    <blockquote>
-        <p>{{ $nce->content }}</p>
-    </blockquote>
+    {{--<blockquote>--}}
+        {{--<p>{{ $nce->content }}</p>--}}
+    {{--</blockquote>--}}
 
     <div class="alert alert-success">比特币价:<strong>{{ $bit_coin_price['buy']}}</strong></div>
     <div class="alert alert-info">上证指数:<strong>{{ $stock_price }}</strong></div>
@@ -52,7 +52,7 @@
     @if(count($meijus))
 
         <a name="xunbo"></a>
-        <h1>迅播美剧</h1>
+        <h1>迅播剧集</h1>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -80,35 +80,35 @@
         {{ $meijus->links()  }}
     @endif
 
-    @if(count($bangumis))
+    {{--@if(count($bangumis))--}}
 
-        <a name="bangumi"></a>
-        <h1>动画番剧</h1>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>番剧</th>
-                <th>剧集</th>
-                <th>更新时间</th>
-                <th>是否处理</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($bangumis as $bangumi)
-                <tr>
-                    <td>{{ $bangumi->comment }}</td>
-                    <td>{{ $bangumi->detail }}</td>
-                    <td>{{ $bangumi->created_at }}</td>
-                    @if( $bangumi->isSeenBy(Auth::user()))
-                        <td><a href={{ url('topics/unseen').'/'.$bangumi->id }} class="btn btn-danger">取消标记</a></td>
-                    @else
-                        <td><a href={{ url('topics/seen').'/'.$bangumi->id }} class="btn btn-success">标记处理</a></td>
-                    @endif
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-        {{ $bangumis->links()  }}
-    @endif
+        {{--<a name="bangumi"></a>--}}
+        {{--<h1>动画番剧</h1>--}}
+        {{--<table class="table table-striped">--}}
+            {{--<thead>--}}
+            {{--<tr>--}}
+                {{--<th>番剧</th>--}}
+                {{--<th>剧集</th>--}}
+                {{--<th>更新时间</th>--}}
+                {{--<th>是否处理</th>--}}
+            {{--</tr>--}}
+            {{--</thead>--}}
+            {{--<tbody>--}}
+            {{--@foreach($bangumis as $bangumi)--}}
+                {{--<tr>--}}
+                    {{--<td>{{ $bangumi->comment }}</td>--}}
+                    {{--<td>{{ $bangumi->detail }}</td>--}}
+                    {{--<td>{{ $bangumi->created_at }}</td>--}}
+                    {{--@if( $bangumi->isSeenBy(Auth::user()))--}}
+                        {{--<td><a href={{ url('topics/unseen').'/'.$bangumi->id }} class="btn btn-danger">取消标记</a></td>--}}
+                    {{--@else--}}
+                        {{--<td><a href={{ url('topics/seen').'/'.$bangumi->id }} class="btn btn-success">标记处理</a></td>--}}
+                    {{--@endif--}}
+                {{--</tr>--}}
+            {{--@endforeach--}}
+            {{--</tbody>--}}
+        {{--</table>--}}
+        {{--{{ $bangumis->links()  }}--}}
+    {{--@endif--}}
 
 @endsection

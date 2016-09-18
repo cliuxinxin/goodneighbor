@@ -57,8 +57,8 @@ Route::post('admin/gardens/create','AdminController@gardensStore');
 Route::delete('admin/gardens/delete/{gardens}','AdminController@gardensDelete');
 
 #Topic
-Route::get('topics/get','TopicsController@get');
 Route::get('topics/index','TopicsController@index');
+Route::get('topics/get','TopicsController@get');
 Route::get('topics/xunbo','TopicsController@xunbo');
 Route::get('topics/test','TopicsController@test');
 Route::get('topics/seen/{topics}','TopicsController@seen');
