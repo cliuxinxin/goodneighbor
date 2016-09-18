@@ -13,7 +13,7 @@
 
     <!-- Styles -->
 {{--    <link rel="stylesheet" href=" {{ url('css/libs/bootstrap.min.css') }}">--}}
-    <link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url('css/app.css') }}">
     @yield('header')
 </head>
@@ -24,9 +24,9 @@
 
         <!-- JavaScripts -->
 {{--<script src="{{ url('js/libs/jquery.min.js') }}"></script>--}}
-<script src="http://libs.useso.com/js/jquery/2.1.1-rc2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/2.1.1-rc2/jquery.min.js"></script>
 {{--<script src="{{ url('js/libs/bootstrap.min.js') }}"></script>--}}
-<script src="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 @yield('footer')

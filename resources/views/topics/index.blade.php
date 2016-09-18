@@ -17,10 +17,12 @@
         <li role="presentation"><a href="#bangumi">动画番剧</a></li>
     </ul>
 
-    <a name="gaoqing"></a>
-    <h1>高清电影</h1>
+
 
     @if(count($gaoqings))
+        <a name="gaoqing"></a>
+        <h1>高清电影</h1>
+        
 
         <table class="table table-striped">
             <thead>
