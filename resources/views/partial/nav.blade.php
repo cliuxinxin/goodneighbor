@@ -79,15 +79,15 @@
         <div class="collapse navbar-collapse" id="navigationbar">
             @if(Auth::check())
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('/timelines').'/'.Auth::user()->id }}">我的故事</a></li>
-                @if(Auth::user()->profile?(Auth::user()->profile->garden?1:0):0)
-                <li><a href="{{ url('/gardentasks') }}">我的小区</a></li>
-                @endif
-                <li><a href="{{ url('/points/user') }}">我的积分</a></li>
-                <li><a href="{{ url('/usertasks') }}">我的求助</a></li>
-                <li><a href="{{ url('/receivetasks') }}">我的帮忙</a></li>
-                <li><a href="{{ url('/profile'.'/'.Auth::user()->id) }}">我的档案</a></li>
-                <li><a href="{{ url('/topics/index') }}">我的追剧</a></li>
+                {{--<li><a href="{{ url('/timelines').'/'.Auth::user()->id }}">我的故事</a></li>--}}
+                {{--@if(Auth::user()->profile?(Auth::user()->profile->garden?1:0):0)--}}
+                {{--<li><a href="{{ url('/gardentasks') }}">我的小区</a></li>--}}
+                {{--@endif--}}
+                {{--<li><a href="{{ url('/points/user') }}">我的积分</a></li>--}}
+                {{--<li><a href="{{ url('/usertasks') }}">我的求助</a></li>--}}
+                {{--<li><a href="{{ url('/receivetasks') }}">我的帮忙</a></li>--}}
+                {{--<li><a href="{{ url('/profile'.'/'.Auth::user()->id) }}">我的档案</a></li>--}}
+                <li><a href="{{ url('/topics/index') }}">我的关注</a></li>
             </ul>
             @endif
 
