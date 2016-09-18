@@ -42,9 +42,9 @@ class TopicsController extends Controller
 
         $this->getXunBoDongman();
 
-        $this->getBangumi(3461);
+//        $this->getBangumi(3461);
 
-        $this->getBangumi(3218);
+//        $this->getBangumi(3218);
 
         return 'OK';
 
