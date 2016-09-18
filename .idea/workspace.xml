@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c57591a-ea60-4475-a275-be351c2bdfa5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TasksController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TasksController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
     </list>
     <ignored path="goodneighbor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,14 +24,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TasksController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TasksController.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68925834">
-              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-              <folding>
-                <element signature="e#41#56#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.15345268">
+              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,7 +85,6 @@
         <option value="$PROJECT_DIR$/resources/views/locations/get.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_04_221925_create_bibles_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BiblesController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_10_110159_create_nces_table.php" />
         <option value="$PROJECT_DIR$/resources/views/topics/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NcesController.php" />
@@ -95,6 +92,7 @@
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TasksController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
       </list>
     </option>
   </component>
@@ -698,13 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59113795">
-          <caret line="68" column="57" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41591138">
@@ -723,7 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
@@ -732,11 +722,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TasksController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68925834">
+        <state vertical-scroll-proportion="0.0">
           <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
-            <element signature="e#41#56#0#PHP" expanded="true" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder=" List all the tasks ..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder=" User tasks ..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder=" User receive tasks. ..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder=" User garden tasks ..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder=" User take the task ..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder=" Sender confirm the receiver get done the job ..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder=" Sender can remove the receiver ..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder=" User can post a task ..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder=" ..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder=" Delete the tasks send by the user ..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder=" See the task and comment ..." />
+            <marker date="1470124348222" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15345268">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

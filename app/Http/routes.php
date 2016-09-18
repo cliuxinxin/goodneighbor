@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'TasksController@index');
+Route::get('/', 'TopicsController@index');
 
 Route::auth();
 
