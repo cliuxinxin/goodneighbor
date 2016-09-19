@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c57591a-ea60-4475-a275-be351c2bdfa5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/topics/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/topics/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
     </list>
     <ignored path="goodneighbor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,8 +27,8 @@
       <file leaf-file-name="TopicsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TopicsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76326">
-              <caret line="78" column="40" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.7506394">
+              <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -119,9 +113,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="793" />
-    <option name="width" value="814" />
-    <option name="height" value="867" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1612" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -262,7 +257,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="793" y="0" width="814" height="867" extended-state="0" />
+    <frame x="-8" y="-8" width="1612" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1265,42 +1260,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71611255">
-          <caret line="66" column="59" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
-          <folding>
-            <marker date="1474256053499" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/topics/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5242967">
-          <caret line="39" column="107" selection-start-line="39" selection-start-column="107" selection-end-line="39" selection-end-column="107" />
-          <folding>
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/autoprefixer-core/lib/info.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1407,10 +1366,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/topics/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5135834">
+          <caret line="39" column="107" selection-start-line="39" selection-start-column="107" selection-end-line="39" selection-end-column="107" />
+          <folding>
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1474256072860" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35705045">
+          <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+          <folding>
+            <marker date="1474256053499" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TopicsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76326">
-          <caret line="78" column="40" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.7506394">
+          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
           <folding />
         </state>
       </provider>

@@ -45,6 +45,7 @@ class TopicsController extends Controller
 //        $this->getBangumi(3461);
 
 //        $this->getBangumi(3218);
+        $this->getInfosByFollow();
 
         return 'OK';
 
