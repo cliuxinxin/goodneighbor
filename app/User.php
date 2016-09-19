@@ -27,6 +27,16 @@ class User extends Authenticatable
     }
 
     /**
+     * User has many infos
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function infos()
+    {
+        return $this->belongsToMany('App\Info');
+    }
+
+    /**
      * A user has many commnets
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

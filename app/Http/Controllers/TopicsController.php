@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Nce;
 use App\Topic;
+use App\Info;
 use Auth;
 use Goutte;
 use Illuminate\Http\Request;
@@ -50,6 +51,42 @@ class TopicsController extends Controller
     }
 
     /**
+     * Get Infos by your follow
+     */
+    public function getInfosByFollow()
+    {
+        $follows = [
+            ['name'=>'金评媒','url' => '4700'],
+            ['name'=>'丁香医生','url' => '11'],
+            ['name'=>'德科地产频道','url' => '1504'],
+            ['name'=>'极客公园','url' => '1222'],
+            ['name'=>'伯乐在线','url' => '1028'],
+            ['name'=>'朱罗纪','url' => '9657'],
+            ['name'=>'米筐投资','url' => '5624'],
+            ['name'=>'差评','url' => '305'],
+            ['name'=>'科学松鼠会','url' => '6031'],
+            ['name'=>'海涛评论','url' => '1159'],
+            ['name'=>'金融八卦女','url' => '149'],
+            ['name'=>'财经国家周刊','url' => '4852'],
+            ['name'=>'跑赢CPI','url' => '1885'],
+            ['name'=>'港股那点事','url' => '835'],
+            ['name'=>'棱镜','url' => '4450'],
+            ['name'=>'知乎日报','url' => '44'],
+            ['name'=>'第1整理术','url' => '3918'],
+            ['name'=>'理财周刊','url' => '2193'],
+            ['name'=>'Quora爱好者','url' => '1024'],
+            ['name'=>'营养师顾中一','url' => '344'],
+            ['name'=>'硅发布','url' => '742'],
+            ['name'=>'虎嗅网','url' => '343']
+        ];
+
+        foreach ($follows as $follow){
+            $this->getInfosByListId($follow['url']);
+        }
+
+    }
+
+    /**
      * Get xunbo list
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -74,15 +111,7 @@ class TopicsController extends Controller
 
     public function test()
     {
-        $crawler = Goutte::request('GET', 'http://www.iwgc.cn/list/4700');
 
-        $nodeValues = $crawler->filter('.list-group-item.clearfix')->each(function (Crawler $node, $i) {
-
-            return [$node->attr('href'),$node->children()->eq(1)->children()->eq(0)->text(),$node->children()->eq(1)->children()->eq(2)->text()];
-
-        });
-
-        return $nodeValues;
     }
 
 
@@ -110,9 +139,10 @@ class TopicsController extends Controller
         $stock_price = $this->getStockPrice();
 
 //        $bible = Bible::find(rand(1,31102));
-        $nce = Nce::find(rand(1,5865));
+//        $nce = Nce::find(rand(1,5865));
+        $infos = Info::latest()->paginate(20);
 
-        return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price','bangumis','nce'));
+        return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price','bangumis','infos'));
     }
 
     /**
@@ -138,6 +168,33 @@ class TopicsController extends Controller
     public function unSeen($topic)
     {
         $this->user->topics()->detach($topic);
+
+        return redirect()->back();
+    }
+
+    /**
+     * User read info
+     *
+     * @param $info
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function read($info)
+    {
+
+        $this->user->infos()->sync([$info], false);
+
+        return redirect()->back();
+    }
+
+    /**
+     * User unRead info
+     *
+     * @param $info
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function unRead($info)
+    {
+        $this->user->infos()->detach($info);
 
         return redirect()->back();
     }
@@ -395,6 +452,29 @@ class TopicsController extends Controller
             $meiju->update(['url' => $meijuUrl->url]);
 
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getInfosByListId($url)
+    {
+        $crawler = Goutte::request('GET', 'http://www.iwgc.cn/list/'.$url);
+
+        $nodeValues = $crawler->filter('.list-group-item.clearfix')->each(function (Crawler $node, $i) {
+
+            return [
+                'url' => 'http://www.iwgc.cn' . $node->attr('href'),
+                'title' => $node->children()->eq(1)->children()->eq(0)->text(),
+                'summary' => $node->children()->eq(1)->children()->eq(2)->text()
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Info::firstOrCreate($nodeValue);
+        }
+
     }
 
 

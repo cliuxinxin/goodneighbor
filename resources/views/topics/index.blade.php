@@ -14,10 +14,37 @@
         <li role="presentation"><a href={{ url('topics/xunbo') }}>迅播美剧列表</a></li>
         <li role="presentation"><a href="#gaoqing">高清电影</a></li>
         <li role="presentation"><a href="#xunbo">迅播美剧</a></li>
-        <li role="presentation"><a href="#bangumi">动画番剧</a></li>
     </ul>
 
+    @if(count($infos))
+        <a name="infos"></a>
+        <h1>信息</h1>
 
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>题目</th>
+                    <th>总结</th>
+                    <th>标记</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($infos as $info)
+                    <tr>
+                        <td><a href="{{ $info->url }}">{{ $info->title }}</a></td>
+                        <td>{{ $info->summary }}</td>
+                        @if( $info->isSeenBy(Auth::user()))
+                            <td><a href={{ url('topics/unread').'/'.$info->id }} class="btn btn-danger">取消标记</a></td>
+                        @else
+                            <td><a href={{ url('topics/read').'/'.$info->id }} class="btn btn-success">标记已读</a></td>
+                        @endif
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        {{ $infos->links()  }}
+    @endif
 
     @if(count($gaoqings))
         <a name="gaoqing"></a>

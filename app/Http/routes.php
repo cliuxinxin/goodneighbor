@@ -63,6 +63,8 @@ Route::get('topics/xunbo','TopicsController@xunbo');
 Route::get('topics/test','TopicsController@test');
 Route::get('topics/seen/{topics}','TopicsController@seen');
 Route::get('topics/unseen/{topics}','TopicsController@unseen');
+Route::get('topics/read/{infos}','TopicsController@read');
+Route::get('topics/unread/{infos}','TopicsController@unread');
 
 #Location
 Route::get('locations/get','LocationsController@get');
