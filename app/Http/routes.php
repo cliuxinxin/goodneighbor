@@ -76,3 +76,7 @@ Route::get('bibles/get','BiblesController@get');
 #New Concept English
 Route::get('nce/get','NcesController@get');
 
+#Thing
+Route::get('thing','ThingsController@get');
+Route::post('thing','ThingsController@store');
+

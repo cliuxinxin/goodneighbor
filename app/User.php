@@ -15,6 +15,15 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    /**
+     * User has many things
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function things()
+    {
+        return $this->hasMany('App\Thing');
+    }
 
     /**
      * User has many topics
