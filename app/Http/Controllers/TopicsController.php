@@ -241,7 +241,7 @@ class TopicsController extends Controller
 
         });
 
-        $nodeValues2 = $crawler->filter('#post_content p span a')->each(function (Crawler $node, $i) {
+        $nodeValues2 = $crawler->filter('#post_content p a')->each(function (Crawler $node, $i) {
 
             return $node->attr('href');
 

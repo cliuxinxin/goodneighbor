@@ -78,5 +78,6 @@ Route::get('nce/get','NcesController@get');
 
 #Thing
 Route::get('thing','ThingsController@get');
+Route::get('api/things','ThingsController@apiGet');
 Route::post('thing','ThingsController@store');
 

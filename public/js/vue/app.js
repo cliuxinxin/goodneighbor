@@ -1,11 +1,23 @@
 var vm = new Vue({
-    el: '#zouni',
-    data: {
-        message : ''
+    el:'#app',
+
+    data:{
+        things:[]
     },
-    methods: {
-        newThing: function (event) {
-            alert(message);
+
+    created:function(){
+        this.getThings();
+    },
+
+    methods:{
+        getThings:function(){
+        this.$http.get('api/things').then((response) => {
+            vm.things = response.body;
+            }, (response) => {
+            // error callback
+         });
         }
     }
+
+
 })

@@ -2,12 +2,18 @@
 
 @section('content')
 
+    <div id="app">
+       <div v-for="thing in things">
+           @{{ thing.body }}
+       </div>
+    </div>
+
     <div class="row">
         <div class="col-lg-6">
-            <div id="zouni" class="input-group">
-                <input v-model="thing" type="text" class="form-control">
+            <div class="input-group">
+                <input type="text" class="form-control">
               <span class="input-group-btn">
-                    <button v-on:click="newThing" class="btn btn-default" type="button">走你</button>
+                    <button class="btn btn-default" type="button">走你</button>
               </span>
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
