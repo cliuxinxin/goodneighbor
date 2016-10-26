@@ -64,6 +64,7 @@ class TopicsController extends Controller
 
         $this->getSiChuan();
 
+        $this->getSuiNing();
 
         return 'OK';
 
@@ -131,8 +132,6 @@ class TopicsController extends Controller
 
     public function test()
     {
-
-        return $this->getSiChuan();
 
     }
 
@@ -548,6 +547,31 @@ class TopicsController extends Controller
         }
 
 
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getSuiNing()
+    {
+        $crawler = Goutte::request('GET', 'http://www.snjsjy.com/Content/Cloud/29_1_20_0');
+
+        $nodeValues = $crawler->filter('div.box-text-list ul li')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->children()->eq(3)->text(),
+
+                'comment' => $node->children()->eq(0)->text(),
+                'type' => '遂宁招标',
+                'url' => $node->children()->eq(3)->attr('href'),
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
         return $nodeValues;
     }
 
