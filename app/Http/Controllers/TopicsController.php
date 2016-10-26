@@ -34,8 +34,8 @@ class TopicsController extends Controller
      */
     public function hospital()
     {
-//        $this->getDaZhou();
-        $topics =  Topic::zhaobiao()->hospital()->paginate(20);
+
+        $topics =  Topic::zhaobiao()->hospital()->latest()->paginate(20);
 
 //        return $topic;
         return view('hospital.index',compact('topics'));
@@ -60,6 +60,11 @@ class TopicsController extends Controller
 
 //        $this->getBangumi(3218);
         $this->getInfosByFollow();
+
+        $this->getDaZhou();
+
+        $this->getSiChuan();
+
 
         return 'OK';
 
@@ -124,8 +129,11 @@ class TopicsController extends Controller
         return view('topics.xunbo',compact('xunbolists'));
     }
 
+
     public function test()
     {
+
+        return $this->getSiChuan();
 
     }
 
@@ -513,6 +521,34 @@ class TopicsController extends Controller
         foreach ($nodeValues as $nodeValue) {
             Topic::firstOrCreate($nodeValue);
         }
+        return $nodeValues;
+    }
+
+    /**
+     * Get Sichuan zhaobiao infos
+     *
+     * @return mixed
+     */
+    private function getSiChuan()
+    {
+        $crawler = Goutte::request('GET', 'http://www.sczfcg.com/CmsNewsController.do?method=recommendBulletinList&moreType=provincebuyBulletinMore&channelCode=dyly&rp=25&page=1');
+
+        $nodeValues = $crawler->filter('div.colsList ul li')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->children()->eq(0)->text(),
+                'comment' => $node->children()->eq(1)->text(),
+                'type' => '四川招标',
+                'url' => 'http://www.sczfcg.com/' . $node->children()->eq(0)->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+
+
         return $nodeValues;
     }
 
