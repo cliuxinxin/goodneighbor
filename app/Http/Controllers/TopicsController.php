@@ -28,6 +28,20 @@ class TopicsController extends Controller
     }
 
     /**
+     * Hospital info
+     *
+     * @return mixed
+     */
+    public function hospital()
+    {
+//        $this->getDaZhou();
+        $topics =  Topic::zhaobiao()->hospital()->paginate(20);
+
+//        return $topic;
+        return view('hospital.index',compact('topics'));
+    }
+
+    /**
      * Get info
      *
      * @return string
@@ -476,6 +490,30 @@ class TopicsController extends Controller
             Info::firstOrCreate($nodeValue);
         }
 
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getDaZhou()
+    {
+        $crawler = Goutte::request('GET', 'http://www.dzggzy.cn/dzsggzy/jyxx/025002/025002001/');
+
+        $nodeValues = $crawler->filter('tr.trfont')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->children()->eq(1)->text(),
+                'comment' => $node->children()->eq(2)->text(),
+                'type' => '达州招标',
+                'url' => 'http://www.dzggzy.cn/' . $node->children()->eq(1)->children()->eq(0)->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+        return $nodeValues;
     }
 
 

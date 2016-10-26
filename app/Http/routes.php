@@ -65,6 +65,7 @@ Route::get('topics/seen/{topics}','TopicsController@seen');
 Route::get('topics/unseen/{topics}','TopicsController@unseen');
 Route::get('topics/read/{infos}','TopicsController@read');
 Route::get('topics/unread/{infos}','TopicsController@unread');
+Route::get('topics/hospital','TopicsController@hospital');
 
 #Location
 Route::get('locations/get','LocationsController@get');

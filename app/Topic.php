@@ -14,6 +14,27 @@ class Topic extends Model
     ];
 
     /**
+     * Scope the hospital
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeHospital($query)
+    {
+        return $query->where('detail','LIKE','%系统%');
+    }
+    /**
+     * Scope the zhaobiao
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeZhaoBiao($query)
+    {
+        return $query->where('type','LIKE','%招标%');
+    }
+
+    /**
      * Topic belongs to many users
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
