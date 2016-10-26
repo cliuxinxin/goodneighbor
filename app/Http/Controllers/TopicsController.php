@@ -37,7 +37,6 @@ class TopicsController extends Controller
 
         $topics =  Topic::zhaobiao()->hospital()->latest()->paginate(20);
 
-//        return $topic;
         return view('hospital.index',compact('topics'));
     }
 

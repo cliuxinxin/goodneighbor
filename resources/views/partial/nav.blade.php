@@ -88,6 +88,7 @@
                 {{--<li><a href="{{ url('/receivetasks') }}">我的帮忙</a></li>--}}
                 {{--<li><a href="{{ url('/profile'.'/'.Auth::user()->id) }}">我的档案</a></li>--}}
                 <li><a href="{{ url('/topics/index') }}">我的关注</a></li>
+                <li><a href="{{ url('/topics/hospital') }}">医院招标</a></li>
             </ul>
             @endif
 
