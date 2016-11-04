@@ -58,7 +58,10 @@ class TopicsController extends Controller
 //        $this->getBangumi(3461);
 
 //        $this->getBangumi(3218);
-        $this->getInfosByFollow();
+//        $this->getInfosByFollow();
+        $this->getChuansongmen();
+
+        $this->getWeixinjingxuan();
 
         $this->getDaZhou();
 
@@ -69,6 +72,8 @@ class TopicsController extends Controller
         return 'OK';
 
     }
+
+
 
     /**
      * Get Infos by your follow
@@ -132,7 +137,6 @@ class TopicsController extends Controller
 
     public function test()
     {
-
     }
 
 
@@ -572,6 +576,54 @@ class TopicsController extends Controller
         foreach ($nodeValues as $nodeValue) {
             Topic::firstOrCreate($nodeValue);
         }
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getChuansongmen()
+    {
+        $crawler = Goutte::request('GET', 'http://chuansong.me/select');
+
+        $nodeValues = $crawler->filter('a.question_link')->each(function (Crawler $node, $i) {
+
+            return [
+                'url' => 'http://chuansong.me' . $node->attr('href'),
+                'title' => $node->text(),
+                'summary' => ''
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Info::firstOrCreate($nodeValue);
+        }
+
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getWeixinjingxuan()
+    {
+        $crawler = Goutte::request('GET', 'http://fzn.cc/');
+
+        $nodeValues = $crawler->filter('header h2 a')->each(function (Crawler $node, $i) {
+
+            return [
+                'url' => $node->attr('href'),
+                'title' => $node->text(),
+                'summary' => ''
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Info::firstOrCreate($nodeValue);
+        }
+
         return $nodeValues;
     }
 
