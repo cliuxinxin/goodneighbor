@@ -11,7 +11,7 @@
     <div class="alert alert-info">上证指数:<strong>{{ $stock_price }}</strong></div>
 
     <ul class="nav nav-pills">
-        <li role="presentation"><a href={{ url('topics/xunbo') }}>迅播美剧列表</a></li>
+        {{--<li role="presentation"><a href={{ url('topics/xunbo') }}>迅播美剧列表</a></li>--}}
         <li role="presentation"><a href="#gaoqing">高清电影</a></li>
         <li role="presentation"><a href="#xunbo">迅播美剧</a></li>
     </ul>
@@ -78,36 +78,36 @@
         {{ $gaoqings->links()  }}
     @endif
 
-    @if(count($meijus))
+    {{--@if(count($meijus))--}}
 
-        <a name="xunbo"></a>
-        <h1>迅播剧集</h1>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>名字</th>
-                <th>说明</th>
-                <th>更新时间</th>
-                <th>是否处理</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($meijus as $meiju)
-                <tr>
-                    <td><a href="{{ $meiju->url }}">{{ $meiju->detail }}</a></td>
-                    <td>{{ $meiju->comment }}</td>
-                    <td>{{ $meiju->created_at }}</td>
-                    @if( $meiju->isSeenBy(Auth::user()))
-                        <td><a href={{ url('topics/unseen').'/'.$meiju->id }} class="btn btn-danger">取消标记</a></td>
-                    @else
-                        <td><a href={{ url('topics/seen').'/'.$meiju->id }} class="btn btn-success">标记处理</a></td>
-                    @endif
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-        {{ $meijus->links()  }}
-    @endif
+        {{--<a name="xunbo"></a>--}}
+        {{--<h1>迅播剧集</h1>--}}
+        {{--<table class="table table-striped">--}}
+            {{--<thead>--}}
+            {{--<tr>--}}
+                {{--<th>名字</th>--}}
+                {{--<th>说明</th>--}}
+                {{--<th>更新时间</th>--}}
+                {{--<th>是否处理</th>--}}
+            {{--</tr>--}}
+            {{--</thead>--}}
+            {{--<tbody>--}}
+            {{--@foreach($meijus as $meiju)--}}
+                {{--<tr>--}}
+                    {{--<td><a href="{{ $meiju->url }}">{{ $meiju->detail }}</a></td>--}}
+                    {{--<td>{{ $meiju->comment }}</td>--}}
+                    {{--<td>{{ $meiju->created_at }}</td>--}}
+                    {{--@if( $meiju->isSeenBy(Auth::user()))--}}
+                        {{--<td><a href={{ url('topics/unseen').'/'.$meiju->id }} class="btn btn-danger">取消标记</a></td>--}}
+                    {{--@else--}}
+                        {{--<td><a href={{ url('topics/seen').'/'.$meiju->id }} class="btn btn-success">标记处理</a></td>--}}
+                    {{--@endif--}}
+                {{--</tr>--}}
+            {{--@endforeach--}}
+            {{--</tbody>--}}
+        {{--</table>--}}
+        {{--{{ $meijus->links()  }}--}}
+    {{--@endif--}}
 
     {{--@if(count($bangumis))--}}
 

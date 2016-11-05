@@ -63,9 +63,9 @@ class TopicsController extends Controller
 
         $this->getGaoQingLaDetailAuto();
 
-        $this->getXunBoMeiJu();
+//        $this->getXunBoMeiJu();
 
-        $this->getXunBoDongman();
+//        $this->getXunBoDongman();
 
         return 'OK';
     }
@@ -154,6 +154,25 @@ class TopicsController extends Controller
 
     public function test()
     {
+        $crawler = Goutte::request('GET', 'http://www.163.com/');
+
+        $nodeValues = $crawler->filter('div.tab-bd-con li a')->each(function (Crawler $node, $i) {
+
+            return [
+                'url' => '',
+                'title' => $node->text(),
+                'summary' => ''
+            ];
+
+        });
+
+//        foreach ($nodeValues as $nodeValue) {
+//            Info::firstOrCreate($nodeValue);
+//        }
+
+        return $nodeValues;
+
+//        return 'OK';
     }
 
 
@@ -167,14 +186,14 @@ class TopicsController extends Controller
     {
         $gaoqings = Topic::where('type', '高清剧集详细')->latest()->paginate(5);
 
-        $xunbolist = $this->user->topics()->where('type','迅播列表')->lists('detail');
+//        $xunbolist = $this->user->topics()->where('type','迅播列表')->lists('detail');
 
-        $meijus = Topic::where('type', '迅播美剧')->whereIn('detail',$xunbolist)->latest()->paginate(5);
+//        $meijus = Topic::where('type', '迅播美剧')->whereIn('detail',$xunbolist)->latest()->paginate(5);
 
 
 //        $meijus = Topic::where('type', '迅播美剧')->latest()->paginate(10);
 
-        $bangumis = Topic::where('type', '动画番剧')->latest()->paginate(5);
+//        $bangumis = Topic::where('type', '动画番剧')->latest()->paginate(5);
 
         $bit_coin_price = json_decode($this->getBitCoinPrice(), true);
 
@@ -184,7 +203,7 @@ class TopicsController extends Controller
 //        $nce = Nce::find(rand(1,5865));
         $infos = Info::latest()->paginate(20);
 
-        return view('topics.index',compact('gaoqings','meijus','bit_coin_price','stock_price','bangumis','infos'));
+        return view('topics.index',compact('gaoqings','bit_coin_price','stock_price','infos'));
     }
 
     /**
