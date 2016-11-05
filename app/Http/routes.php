@@ -58,7 +58,6 @@ Route::delete('admin/gardens/delete/{gardens}','AdminController@gardensDelete');
 
 #Topic
 Route::get('topics/index','TopicsController@index');
-Route::get('topics/get','TopicsController@get');
 Route::get('topics/xunbo','TopicsController@xunbo');
 Route::get('topics/test','TopicsController@test');
 Route::get('topics/seen/{topics}','TopicsController@seen');
@@ -66,6 +65,12 @@ Route::get('topics/unseen/{topics}','TopicsController@unseen');
 Route::get('topics/read/{infos}','TopicsController@read');
 Route::get('topics/unread/{infos}','TopicsController@unread');
 Route::get('topics/hospital','TopicsController@hospital');
+
+#Topic Get
+Route::get('topics/get','TopicsController@get');
+Route::get('topics/getbyday','TopicsController@getByDay');
+Route::get('topics/getby6hours','TopicsController@getBy6Hours');
+
 
 #Location
 Route::get('locations/get','LocationsController@get');

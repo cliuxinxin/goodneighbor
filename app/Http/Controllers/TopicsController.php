@@ -40,12 +40,24 @@ class TopicsController extends Controller
         return view('hospital.index',compact('topics'));
     }
 
+
     /**
-     * Get info
+     * Get info by day
      *
      * @return string
      */
-    public function get()
+    public function getByDay()
+    {
+        $this->getDaZhou();
+
+        $this->getSiChuan();
+
+        $this->getSuiNing();
+
+        return 'OK';
+    }
+
+    public function getBy6Hours()
     {
         $this->getGaoQingLaUpdate();
 
@@ -55,6 +67,17 @@ class TopicsController extends Controller
 
         $this->getXunBoDongman();
 
+        return 'OK';
+    }
+
+    /**
+     * Get info
+     *
+     * @return string
+     */
+    public function get()
+    {
+
 //        $this->getBangumi(3461);
 
 //        $this->getBangumi(3218);
@@ -62,12 +85,6 @@ class TopicsController extends Controller
         $this->getChuansongmen();
 
         $this->getWeixinjingxuan();
-
-        $this->getDaZhou();
-
-        $this->getSiChuan();
-
-        $this->getSuiNing();
 
         return 'OK';
 
