@@ -82,9 +82,7 @@ class TopicsController extends Controller
 
 //        $this->getBangumi(3218);
 //        $this->getInfosByFollow();
-        $this->getChuansongmen();
-
-        $this->getWeixinjingxuan();
+        $this->getInfosByFollow();
 
         return 'OK';
 
@@ -154,25 +152,9 @@ class TopicsController extends Controller
 
     public function test()
     {
-        $crawler = Goutte::request('GET', 'http://www.163.com/');
+        $this->getInfosByFollow();
 
-        $nodeValues = $crawler->filter('div.tab-bd-con li a')->each(function (Crawler $node, $i) {
-
-            return [
-                'url' => '',
-                'title' => $node->text(),
-                'summary' => ''
-            ];
-
-        });
-
-//        foreach ($nodeValues as $nodeValue) {
-//            Info::firstOrCreate($nodeValue);
-//        }
-
-        return $nodeValues;
-
-//        return 'OK';
+        return 'OK';
     }
 
 
