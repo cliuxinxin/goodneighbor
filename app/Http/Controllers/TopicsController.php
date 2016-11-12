@@ -117,6 +117,10 @@ class TopicsController extends Controller
             ['name'=>'Quora爱好者','url' => '1024'],
             ['name'=>'营养师顾中一','url' => '344'],
             ['name'=>'硅发布','url' => '742'],
+            ['name'=>'财子佳人','url' => '9776'],
+            ['name'=>'价值线','url' => '2167'],
+            ['name'=>'大浪淘沙','url' => '3767'],
+            ['name'=>'安邦咨询','url' => '3599'],
             ['name'=>'虎嗅网','url' => '343']
         ];
 

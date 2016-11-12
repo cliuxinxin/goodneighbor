@@ -28,8 +28,8 @@
       <file leaf-file-name="TopicsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TopicsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5886525">
-              <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.70212764">
+              <caret line="121" column="45" selection-start-line="121" selection-start-column="45" selection-end-line="121" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -432,13 +432,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationsController.php">
@@ -642,27 +642,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58156025">
           <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-          <folding>
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder=" Scope the hospital ..." />
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder=" Scope the zhaobiao ..." />
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder=" Topic belongs to many users ..." />
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder=" Is this user see ..." />
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1477488966568" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TopicsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5886525">
-          <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.70212764">
+          <caret line="121" column="45" selection-start-line="121" selection-start-column="45" selection-end-line="121" selection-end-column="45" />
           <folding />
         </state>
       </provider>
