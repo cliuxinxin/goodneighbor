@@ -511,9 +511,8 @@ class TopicsController extends Controller
         $nodeValues = $crawler->filter('.list-group-item.clearfix')->each(function (Crawler $node, $i) {
 
             return [
-                'url' => 'http://www.iwgc.cn' . $node->attr('href'),
                 'title' => $node->children()->eq(1)->children()->eq(0)->text(),
-                'summary' => $node->children()->eq(1)->children()->eq(2)->text()
+                'url' => 'http://www.iwgc.cn' . $node->attr('href')
             ];
 
         });
