@@ -28,8 +28,8 @@
       <file leaf-file-name="TopicsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TopicsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5177305">
-              <caret line="519" column="45" selection-start-line="519" selection-start-column="45" selection-end-line="519" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.44680852">
+              <caret line="514" column="81" selection-start-line="514" selection-start-column="81" selection-end-line="514" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -441,13 +441,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationsController.php">
@@ -671,8 +671,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TopicsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5177305">
-          <caret line="519" column="45" selection-start-line="519" selection-start-column="45" selection-end-line="519" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.44680852">
+          <caret line="514" column="81" selection-start-line="514" selection-start-column="81" selection-end-line="514" selection-end-column="81" />
           <folding />
         </state>
       </provider>

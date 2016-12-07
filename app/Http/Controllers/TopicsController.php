@@ -156,9 +156,9 @@ class TopicsController extends Controller
 
     public function test()
     {
-        $this->getInfosByFollow();
 
-        return 'OK';
+        $nodevalues = $this->getInfosByListId('343');
+        return $nodevalues;
     }
 
 
@@ -512,6 +512,7 @@ class TopicsController extends Controller
 
             return [
                 'title' => $node->children()->eq(1)->children()->eq(0)->text(),
+                'summary' => $node->children()->eq(1)->children()->eq(2)->text(),
                 'url' => 'http://www.iwgc.cn' . $node->attr('href')
             ];
 
@@ -520,6 +521,8 @@ class TopicsController extends Controller
         foreach ($nodeValues as $nodeValue) {
             Info::firstOrCreate($nodeValue);
         }
+
+        return $nodeValues;
 
     }
 
