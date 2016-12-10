@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Info extends Model
 {
@@ -11,6 +12,17 @@ class Info extends Model
         'summary',
         'url'
     ];
+
+
+    /**
+     * This week infos
+     *
+     * @param $query
+     */
+    public function scopeThisweek($query)
+    {
+        $query->where('created_at','>=',Carbon::now()->addDays(-8));
+    }
 
     /**
      * Info belongs to many users
