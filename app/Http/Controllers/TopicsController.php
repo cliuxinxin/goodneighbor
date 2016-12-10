@@ -186,7 +186,7 @@ class TopicsController extends Controller
 
 //        $bible = Bible::find(rand(1,31102));
 //        $nce = Nce::find(rand(1,5865));
-        $infos = Info::groupBy('title')->latest()->paginate(20);
+        $infos = Info::latest()->distinct('title')->paginate(20);
 
         return view('topics.index',compact('gaoqings','bit_coin_price','stock_price','infos'));
     }
