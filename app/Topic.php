@@ -13,6 +13,24 @@ class Topic extends Model
         'comment'
     ];
 
+    public function scopePaichu($query)
+    {
+        return $query->where('detail','<>','自贡设备网')
+            ->where('detail','<>','自贡设备租赁')
+            ->where('detail','<>','自贡印刷设备网')
+            ->where('detail','<>','自贡包装设备网')
+            ->where('detail','<>','自贡造纸设备网')
+            ->where('detail','<>','自贡水泥设备网')
+            ->where('detail','<>','自贡电力设备网')
+            ->where('detail','<>','自贡环保设备网')
+            ->where('detail','<>','自贡制药设备网')
+            ->where('detail','<>','自贡塑料设备网')
+            ->where('detail','<>','自贡建材设备网')
+            ->where('detail','<>','自贡服装设备网')
+            ->where('detail','<>','自贡自动设备网')
+            ->where('detail','<>','自贡机械设备网');
+    }
+
     /**
      * Scope the hospital
      *

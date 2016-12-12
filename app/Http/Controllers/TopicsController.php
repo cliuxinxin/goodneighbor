@@ -36,7 +36,7 @@ class TopicsController extends Controller
     public function hospital()
     {
 
-        $topics =  Topic::zhaobiao()->hospital()->latest()->paginate(20);
+        $topics =  Topic::zhaobiao()->hospital()->Paichu()->latest()->paginate(20);
 
         return view('hospital.index',compact('topics'));
     }
