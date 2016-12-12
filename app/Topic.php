@@ -21,7 +21,7 @@ class Topic extends Model
      */
     public function scopeHospital($query)
     {
-        return $query->where('detail','LIKE','%医院%')->orWhere('detail','LIKE','%设备%');
+        return $query->where('detail','LIKE','%医院%')->orWhere('detail','LIKE','%设备%')->orWhere('detail','LIKE','%竞争%');
     }
     /**
      * Scope the zhaobiao
