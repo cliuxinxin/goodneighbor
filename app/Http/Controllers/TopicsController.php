@@ -67,12 +67,6 @@ class TopicsController extends Controller
 
         $this->getSuiling();
 
-        $this->getLeshanshi();
-
-        $this->getLeshanquxian();
-
-        $this->getZigong();
-
         $this->getLuzhou();
 
         $this->getLiangshan();
@@ -82,6 +76,12 @@ class TopicsController extends Controller
         $this->getGanzizhou();
 
         $this->getJianyan();
+
+        $this->getLeshanshi();
+
+        $this->getLeshanquxian();
+
+        $this->getZigong();
 
         return 'OK';
     }
@@ -186,7 +186,7 @@ class TopicsController extends Controller
     public function test()
     {
 
-      return 'OK';
+        return 'OK';
     }
 
 
@@ -835,7 +835,7 @@ class TopicsController extends Controller
         $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->attr('title'),
+                'detail' => $node->attr('title')?:'1',
                 'comment' => date('Y-m-d'),
                 'type' => '乐山市招标',
                 'url' => 'http://lsggzy.com.cn/' . $node->attr('href')
@@ -860,7 +860,7 @@ class TopicsController extends Controller
         $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->attr('title'),
+                'detail' => $node->attr('title')?:'1',
                 'comment' => date('Y-m-d'),
                 'type' => '乐山区县招标',
                 'url' => 'http://lsggzy.com.cn/' . $node->attr('href')
@@ -885,7 +885,7 @@ class TopicsController extends Controller
         $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->attr('title'),
+                'detail' => $node->attr('title')?:1,
                 'comment' => date('Y-m-d'),
                 'type' => '自贡招标',
                 'url' => $node->attr('href')
