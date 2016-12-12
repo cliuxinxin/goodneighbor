@@ -885,10 +885,10 @@ class TopicsController extends Controller
         $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->attr('title')?:1,
+                'detail' => $node->attr('title')?:'1',
                 'comment' => date('Y-m-d'),
                 'type' => '自贡招标',
-                'url' => $node->attr('href')
+                'url' => $node->attr('href')?:'http://wwww.baidu.cn'
             ];
 
         });
