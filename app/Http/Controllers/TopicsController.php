@@ -55,6 +55,34 @@ class TopicsController extends Controller
 
         $this->getSuiNing();
 
+        $this->getGuangyuan();
+
+        $this->getNanchong();
+
+        $this->getMianyang();
+
+        $this->getMianyangquxian();
+
+        $this->getZiyang();
+
+        $this->getSuiling();
+
+        $this->getLeshanshi();
+
+        $this->getLeshanquxian();
+
+        $this->getZigong();
+
+        $this->getLuzhou();
+
+        $this->getLiangshan();
+
+        $this->getPanzhihua();
+
+        $this->getGanzizhou();
+
+        $this->getJianyan();
+
         return 'OK';
     }
 
@@ -158,7 +186,7 @@ class TopicsController extends Controller
     public function test()
     {
 
-        return "ok";
+      return 'OK';
     }
 
 
@@ -646,6 +674,352 @@ class TopicsController extends Controller
 
         foreach ($nodeValues as $nodeValue) {
             Info::firstOrCreate($nodeValue);
+        }
+
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getGuangyuan()
+    {
+        $crawler = Goutte::request('GET', 'http://www.gyggzy.gov.cn/ceinwz/WebInfo_List.aspx?zfcg=0000000&PubDateSort=0&ShowPre=0&newsid=200&FromUrl=zfcg');
+
+        $nodeValues = $crawler->filter('tr td a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->text(),
+                'comment' => date('Y-m-d'),
+                'type' => '广元招标',
+                'url' => 'http://www.gyggzy.gov.cn/ceinwz/' . $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getNanchong()
+    {
+        $crawler = Goutte::request('GET', 'http://ggzy.scnczw.gov.cn/TPFront/front_zfcg/071002/?categoryno=0710&category=071002');
+
+        $nodeValues = $crawler->filter('a.list-a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->attr('title'),
+                'comment' => $node->children()->eq(1)->text(),
+                'type' => '南充招标',
+                'url' => 'http://ggzy.scnczw.gov.cn/' . $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getMianyang()
+    {
+        $crawler = Goutte::request('GET', 'http://caigou.my.gov.cn/ceinwz/WebInfo_List.aspx?newsid=601&jsgc=&zfcg=0100000&tdjy=&cqjy=&PubDateSort=0&ShowPre=1&CbsZgys=0&zbfs=0&qxxx=0&showqxname=0&NewsShowPre=1&wsjj=0&showCgr=0&ShowOverDate=0&showdate=1&FromUrl=nourl');
+
+        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->text(),
+                'comment' => date('Y-m-d'),
+                'type' => '绵阳招标',
+                'url' => 'http://caigou.my.gov.cn/ceinwz/' . $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getMianyangquxian()
+    {
+        $crawler = Goutte::request('GET', 'http://caigou.my.gov.cn/ceinwz/WebInfo_List.aspx?newsid=2000&jsgc=&zfcg=0000000&tdjy=&cqjy=&PubDateSort=0&ShowPre=1&CbsZgys=0&zbfs=0&qxxx=0&showqxname=0&NewsShowPre=1&wsjj=0&showCgr=0&ShowOverDate=0&showdate=1&FromUrl=nourl');
+
+        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->text(),
+                'comment' => date('Y-m-d'),
+                'type' => '绵阳区县招标',
+                'url' => 'http://caigou.my.gov.cn/ceinwz/' . $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getZiyang()
+    {
+        $crawler = Goutte::request('GET', 'http://www.zyjyw.cn/Content/603_1');
+
+        $nodeValues = $crawler->filter('li a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->text(),
+                'comment' => date('Y-m-d'),
+                'type' => '资阳招标',
+                'url' => 'http://www.zyjyw.cn' . $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getSuiling()
+    {
+        $crawler = Goutte::request('GET', 'http://www.snjsjy.com/Content/Cloud/29_1_20_0?AspxAutoDetectCookieSupport=1');
+
+        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->text(),
+                'comment' => date('Y-m-d'),
+                'type' => '遂宁招标',
+                'url' => $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getLeshanshi()
+    {
+        $crawler = Goutte::request('GET', 'http://lsggzy.com.cn/TPFront/zfcg_leshan/003011/003011001/');
+
+        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->attr('title'),
+                'comment' => date('Y-m-d'),
+                'type' => '乐山市招标',
+                'url' => 'http://lsggzy.com.cn/' . $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getLeshanquxian()
+    {
+        $crawler = Goutte::request('GET', 'http://lsggzy.com.cn/TPFront/zfcg_leshan/003011/003011001/');
+
+        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->attr('title'),
+                'comment' => date('Y-m-d'),
+                'type' => '乐山区县招标',
+                'url' => 'http://lsggzy.com.cn/' . $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getZigong()
+    {
+        $crawler = Goutte::request('GET', 'http://www.zgazxxw.com/sc-022011.html');
+
+        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->attr('title'),
+                'comment' => date('Y-m-d'),
+                'type' => '自贡招标',
+                'url' => $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getLuzhou()
+    {
+        $crawler = Goutte::request('GET', 'http://cg.luzhou.gov.cn/ceinwz/WebInfo_List.aspx?newsid=5000,5005,5010,5015,5020,5025,5030,5035&jsgc=&zfcg=10000000&tdjy=&cqjy=&PubDateSort=0&ShowPre=0&CbsZgys=0&zbfs=0&qxxx=0&showqxname=1&NewsShowPre=1&wsjj=0&showCgr=0&ShowOverDate=0&showdate=1&FromUrl=zfcg');
+
+        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->text(),
+                'comment' => date('Y-m-d'),
+                'type' => '泸州招标',
+                'url' => 'http://cg.luzhou.gov.cn/ceinwz/' . $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getLiangshan()
+    {
+        $crawler = Goutte::request('GET', 'http://www.lszw.gov.cn/plus/list.php?tid=12');
+
+        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->text(),
+                'comment' => date('Y-m-d'),
+                'type' => '凉山招标',
+                'url' => 'http://www.lszw.gov.cn/' . $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getPanzhihua()
+    {
+        $crawler = Goutte::request('GET', 'http://www.pzhjs.com/JyWeb/XXGK/JYXTXXFBList?SubType=2&SubType2=2010&Type=%E4%BA%A4%E6%98%93%E4%BF%A1%E6%81%AF');
+
+        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->text(),
+                'comment' => date('Y-m-d'),
+                'type' => '攀枝花招标',
+                'url' => $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getGanzizhou()
+    {
+        $crawler = Goutte::request('GET', 'http://www.scgzzg.com/index.php?s=/Home/Article/lists/category/58.html');
+
+        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->text(),
+                'comment' => date('Y-m-d'),
+                'type' => '甘孜州招标',
+                'url' => 'http://www.scgzzg.com/' . $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
+        }
+
+        return $nodeValues;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getJianyan()
+    {
+        $crawler = Goutte::request('GET', 'http://www.jyggzy.cn/Zfcg_List.aspx?ProjectItemType=7');
+
+        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+
+            return [
+                'detail' => $node->text(),
+                'comment' => date('Y-m-d'),
+                'type' => '简阳招标',
+                'url' => 'http://www.jyggzy.cn/' . $node->attr('href')
+            ];
+
+        });
+
+        foreach ($nodeValues as $nodeValue) {
+            Topic::firstOrCreate($nodeValue);
         }
 
         return $nodeValues;
