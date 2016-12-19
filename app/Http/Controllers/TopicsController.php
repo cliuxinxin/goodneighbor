@@ -53,7 +53,7 @@ class TopicsController extends Controller
 
         $this->getSiChuan();
 
-        $this->getSuiNing();
+//        $this->getSuiNing();
 
         $this->getGuangyuan();
 
@@ -735,13 +735,13 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://caigou.my.gov.cn/ceinwz/WebInfo_List.aspx?newsid=601&jsgc=&zfcg=0100000&tdjy=&cqjy=&PubDateSort=0&ShowPre=1&CbsZgys=0&zbfs=0&qxxx=0&showqxname=0&NewsShowPre=1&wsjj=0&showCgr=0&ShowOverDate=0&showdate=1&FromUrl=nourl');
 
-        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('.fFbDate')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->text(),
-                'comment' => date('Y-m-d'),
+                'detail' => $node->siblings()->eq(1)->children()->eq(0)->text(),
+                'comment' => $node->children()->eq(0)->text(),
                 'type' => '绵阳招标',
-                'url' => 'http://caigou.my.gov.cn/ceinwz/' . $node->attr('href')
+                'url' => 'http://caigou.my.gov.cn/ceinwz/' . $node->siblings()->eq(1)->children()->eq(0)->attr('href')
             ];
 
         });
@@ -759,13 +759,13 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://caigou.my.gov.cn/ceinwz/WebInfo_List.aspx?newsid=2000&jsgc=&zfcg=0000000&tdjy=&cqjy=&PubDateSort=0&ShowPre=1&CbsZgys=0&zbfs=0&qxxx=0&showqxname=0&NewsShowPre=1&wsjj=0&showCgr=0&ShowOverDate=0&showdate=1&FromUrl=nourl');
 
-        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('.fFbDate')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->text(),
-                'comment' => date('Y-m-d'),
+                'detail' => $node->siblings()->eq(1)->children()->eq(0)->text(),
+                'comment' => $node->children()->eq(0)->text(),
                 'type' => '绵阳区县招标',
-                'url' => 'http://caigou.my.gov.cn/ceinwz/' . $node->attr('href')
+                'url' => 'http://caigou.my.gov.cn/ceinwz/' . $node->siblings()->eq(1)->children()->eq(0)->attr('href')
             ];
 
         });
@@ -783,13 +783,13 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://www.zyjyw.cn/Content/603_1');
 
-        $nodeValues = $crawler->filter('li a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('.btl-time.fr')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->text(),
-                'comment' => date('Y-m-d'),
+                'detail' => $node->siblings()->eq(2)->text(),
+                'comment' => $node->text(),
                 'type' => '资阳招标',
-                'url' => 'http://www.zyjyw.cn' . $node->attr('href')
+                'url' => 'http://www.zyjyw.cn' .  $node->siblings()->eq(2)->attr('href')
             ];
 
         });
@@ -808,13 +808,13 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://www.snjsjy.com/Content/Cloud/29_1_20_0?AspxAutoDetectCookieSupport=1');
 
-        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('.btl-time.fr')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->text(),
-                'comment' => date('Y-m-d'),
+                'detail' => $node->siblings()->eq(2)->text(),
+                'comment' => $node->text(),
                 'type' => '遂宁招标',
-                'url' => $node->attr('href')
+                'url' =>  $node->siblings()->eq(2)->attr('href')
             ];
 
         });
@@ -832,13 +832,13 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://lsggzy.com.cn/TPFront/zfcg_leshan/003011/003011001/');
 
-        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('.moreinfoCss')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->attr('title')?:'1',
-                'comment' => date('Y-m-d'),
+                'detail' => $node->children()->eq(0)->attr('title'),
+                'comment' => $node->siblings()->eq(2)->text(),
                 'type' => '乐山市招标',
-                'url' => 'http://lsggzy.com.cn/' . $node->attr('href')
+                'url' => 'http://lsggzy.com.cn/'.$node->children()->eq(0)->attr('href')
             ];
 
         });
@@ -857,13 +857,13 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://lsggzy.com.cn/TPFront/zfcg_leshan/003011/003011001/');
 
-        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('.moreinfoCss')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->attr('title')?:'1',
-                'comment' => date('Y-m-d'),
+                'detail' => $node->children()->eq(0)->attr('title'),
+                'comment' => $node->siblings()->eq(2)->text(),
                 'type' => '乐山区县招标',
-                'url' => 'http://lsggzy.com.cn/' . $node->attr('href')
+                'url' => 'http://lsggzy.com.cn/'.$node->children()->eq(0)->attr('href')
             ];
 
         });
@@ -882,13 +882,13 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://www.zgazxxw.com/sc-022011.html');
 
-        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('.list_zb02 td a')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->attr('title')?:'1',
-                'comment' => date('Y-m-d'),
+                'detail' => $node->attr('title'),
+                'comment' => date('Y').'-'.$node->parents()->siblings()->eq(3)->text(),
                 'type' => '自贡招标',
-                'url' => $node->attr('href')?:'http://wwww.baidu.cn'
+                'url' => $node->attr('href')
             ];
 
         });
@@ -907,13 +907,13 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://cg.luzhou.gov.cn/ceinwz/WebInfo_List.aspx?newsid=5000,5005,5010,5015,5020,5025,5030,5035&jsgc=&zfcg=10000000&tdjy=&cqjy=&PubDateSort=0&ShowPre=0&CbsZgys=0&zbfs=0&qxxx=0&showqxname=1&NewsShowPre=1&wsjj=0&showCgr=0&ShowOverDate=0&showdate=1&FromUrl=zfcg');
 
-        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('.fFbDate')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->text(),
-                'comment' => date('Y-m-d'),
+                'detail' => $node->siblings()->eq(1)->children()->eq(0)->text(),
+                'comment' =>date('Y').'-'.$node->children()->eq(0)->text(),
                 'type' => '泸州招标',
-                'url' => 'http://cg.luzhou.gov.cn/ceinwz/' . $node->attr('href')
+                'url' => 'http://cg.luzhou.gov.cn/ceinwz/' . $node->siblings()->eq(1)->children()->eq(0)->attr('href')
             ];
 
         });
@@ -932,13 +932,13 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://www.lszw.gov.cn/plus/list.php?tid=12');
 
-        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('.fr')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->text(),
-                'comment' => date('Y-m-d'),
+                'detail' => $node->siblings()->eq(0)->text(),
+                'comment' => $node->text(),
                 'type' => '凉山招标',
-                'url' => 'http://www.lszw.gov.cn/' . $node->attr('href')
+                'url' => 'http://www.lszw.gov.cn/' .$node->siblings()->eq(0)->attr('href')
             ];
 
         });
@@ -957,13 +957,13 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://www.pzhjs.com/JyWeb/XXGK/JYXTXXFBList?SubType=2&SubType2=2010&Type=%E4%BA%A4%E6%98%93%E4%BF%A1%E6%81%AF');
 
-        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('.ListTableOddRow')->each(function (Crawler $node, $i) {
 
             return [
-                'detail' => $node->text(),
-                'comment' => date('Y-m-d'),
+                'detail' => $node->children()->eq(0)->children()->eq(0)->children()->eq(0)->attr('title'),
+                'comment' => $node->children()->eq(2)->text(),
                 'type' => '攀枝花招标',
-                'url' => $node->attr('href')
+                'url' =>  $node->children()->eq(0)->children()->eq(0)->attr('href')
             ];
 
         });
@@ -982,11 +982,11 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://www.scgzzg.com/index.php?s=/Home/Article/lists/category/58.html');
 
-        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('a.fl')->each(function (Crawler $node, $i) {
 
             return [
                 'detail' => $node->text(),
-                'comment' => date('Y-m-d'),
+                'comment' => $node->siblings()->eq(0)->text(),
                 'type' => '甘孜州招标',
                 'url' => 'http://www.scgzzg.com/' . $node->attr('href')
             ];
@@ -1007,13 +1007,13 @@ class TopicsController extends Controller
     {
         $crawler = Goutte::request('GET', 'http://www.jyggzy.cn/Zfcg_List.aspx?ProjectItemType=7');
 
-        $nodeValues = $crawler->filter('a')->each(function (Crawler $node, $i) {
+        $nodeValues = $crawler->filter('.style1')->each(function (Crawler $node, $i) {
 
             return [
                 'detail' => $node->text(),
-                'comment' => date('Y-m-d'),
+                'comment' => date('Y').'-'.$node->siblings()->eq(1)->text(),
                 'type' => '简阳招标',
-                'url' => 'http://www.jyggzy.cn/' . $node->attr('href')
+                'url' => 'http://www.jyggzy.cn/' . $node->children()->eq(0)->attr('href')
             ];
 
         });
